@@ -1,0 +1,19 @@
+https://ask.hellobi.com/blog/joljess/452 外部表做权限认证
+http://wenku.baidu.com/link?url=afGocuEoWyqRepfzq5Us85OMMVQXLmYz8KYPqo25Zt-crz0NLFCVkLwc7ER15UoZVsn5Xr9VBh9Pfx4fVfLmkIBrVinCKgzArNvQNPKHh9u BIEE集成
+http://www.open-open.com/doc/view/251ab5a58c734adcbe527efedc6e858e BIEE集成教程
+http://docs.oracle.com/middleware/12212/biee/BIEIT/sample.htm#BIEIT705 wsil
+http://3y.uu456.com/ss_02q02x02t02tfikl5tirkgk101402f02t02q02b02t03603a02x02r02t015_1.html
+http://blog.sina.com.cn/s/blog_544a7be40101ado3.html 查询条件
+ 
+
+直接调用BIEE DashBorad
+http://192.168.200.140:7001/analytics/saw.dll?PortalPages&PortalPath=%2Fshared%2F%E4%BA%8C%E6%9C%9F%E5%88%86%E6%9E%90%2F_portal%2F%E8%B4%A8%E9%87%8F%E5%92%8C%E5%AE%89%E5%85%A8&Page=%E4%BD%8F%E9%99%A2%E6%AD%BB%E4%BA%A1&Syndicate=Siebel&NQUser=weblogic1&NQPassword=weblogic123&Options=fd
+ 
+直接调用分析
+http://192.168.200.140:7001/analytics/saw.dllPortalGo&Action=prompt&path=%2Fshared%2Ftest%2Ftestgo
+ 
+返回分析XML结果集
+http://192.168.200.140:7001/analytics/saw.dll?Go&Path=/shared/test/testgo&Format=XML
+ 
+直接调用访问好的数据和图形
+http://192.168.200.140:7001/analytics/saw.dll?Go&Path=/shared/test/testgo&Format=HTML&NQUser=weblogic1&NQPassword=weblogic123
