@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="tool" content="leanote-desktop-app">
+<title>Python Note</title>
+<style>
+
+*{font-family:"lucida grande","lucida sans unicode",lucida,helvetica,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+
+body {
+  margin: 0;
+}
+
+/*公用文字样式*/
+h1{font-size:30px}h2{font-size:24px}h3{font-size:18px}h4{font-size:14px}
+.note-container{
+    width:850px; 
+    margin:auto;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 10px #eee;
+}
+#title {
+  margin: 0;
+}
+table {
+    margin-bottom: 16px;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+}
+table th {
+    font-weight: bold;
+}
+
+table tr {
+    background-color: none;
+    border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+    background-color: rgb(247, 247, 249);
+}
+.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  padding: 6px 13px;
+}
+blockquote {
+  border-left-width:10px;
+  background-color:rgba(128,128,128,0.05);
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  padding:15px 20px;
+  border-left:5px solid rgba(128,128,128,0.075);
+}
+blockquote p {
+  margin-bottom:1.1em;
+  font-size:1em;
+  line-height:1.45
+}
+blockquote ul:last-child,blockquote ol:last-child {
+  margin-bottom:0
+}
+pre {
+  padding: 18px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+  display: block;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  white-space: nowrap;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.footnote {
+  vertical-align: top;
+  position: relative;
+  top: -0.5em;
+  font-size: .8em;
+}
+
+hr {
+  margin:2em 0
+}
+img {
+  max-width:100%
+}
+pre {
+  word-break:break-word
+}
+p,pre,pre.prettyprint,blockquote {
+  margin:0 0 1.1em
+}
+hr {
+  margin:2em 0
+}
+img {
+  max-width:100%
+}
+.sequence-diagram,.flow-chart {
+  text-align:center;
+  margin-bottom:1.1em
+}
+.sequence-diagram text,.flow-chart text {
+  font-size:15px !important;
+  font-family:"Source Sans Pro",sans-serif !important
+}
+.sequence-diagram [fill="#ffffff"],.flow-chart [fill="#ffffff"] {
+  fill:#f6f6f6
+}
+.sequence-diagram [stroke="#000000"],.flow-chart [stroke="#000000"] {
+  stroke:#3f3f3f
+}
+.sequence-diagram text[stroke="#000000"],.flow-chart text[stroke="#000000"] {
+  stroke:none
+}
+.sequence-diagram [fill="#000"],.flow-chart [fill="#000"],.sequence-diagram [fill="#000000"],.flow-chart [fill="#000000"],.sequence-diagram [fill="black"],.flow-chart [fill="black"] {
+  fill:#3f3f3f
+}
+ul,ol {
+  margin-bottom:1.1em
+}
+ul ul,ol ul,ul ol,ol ol {
+  margin-bottom:1.1em
+}
+kbd {
+  padding:.1em .6em;
+  border:1px solid rgba(63,63,63,0.25);
+  -webkit-box-shadow:0 1px 0 rgba(63,63,63,0.25);
+  box-shadow:0 1px 0 rgba(63,63,63,0.25);
+  font-size:.7em;
+  font-family:sans-serif;
+  background-color:#fff;
+  color:#333;
+  border-radius:3px;
+  display:inline-block;
+  margin:0 .1em;
+  white-space:nowrap
+}
+.toc ul {
+  list-style-type:none;
+  margin-bottom:15px
+}
+</style>
+<!-- 该css供自定义样式 -->
+<link href="../leanote-html.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="note-container">
+		<h1 class="title" id="leanote-title">Python Note</h1>
+		<div class="content-html" id="leanote-content"><p style="padding-left: 30px; text-align: left;" data-mce-style="padding-left: 30px; text-align: left;"><br></p><h2>Basic</h2><p>1.两种运行方式，cmd中直接输入python进入命令行模式；在进入.PY文件目录下 在CMD中用python XXX.py运行即可。</p><p>&nbsp;</p><p>2.python的靠缩进来区分模块，业内约定是四个空格，在某句代&nbsp;&nbsp;&nbsp;&nbsp;码后加上：即认为下方缩进部分为内部代码模块。</p><p>例：</p><pre id="leanote_ace_1488763023046_0" class="brush:python ace-tomorrow ace_focus" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">a&nbsp;=&nbsp;100
+if&nbsp;a&nbsp;&gt;=&nbsp;0:
+&nbsp;&nbsp;&nbsp;&nbsp;print(a)
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;print(-a)﻿​&nbsp;</pre><p>&nbsp;</p><p>3.#号用来注释语句，为单行注释</p><p>&nbsp;</p><p>4.用单引号和双引号括起来的都是文本，但是当单引号也是文本本身的时候要用双引号括起来。</p><p>例："I'm OK"</p><p>&nbsp; &nbsp;在遇到多个符号的时候我们要使用转义符 \来。</p><p>例：‘I\'m OK’ 其输出和上方是一样的。</p><p>&nbsp; &nbsp;当我们遇到\n（换行），\t(制表符)的时候，多个\会很迷惑人，所以我们使用r''来表达，会默认在r''中的字符串不再转意</p><p>例:print(r'\\\t\\\')所输出的就是\\\t\\\&nbsp;</p><p>&nbsp; &nbsp;&nbsp;print('\\\t\\\')所输出的就是\ &nbsp; &nbsp; \</p><p>&nbsp; &nbsp;CMD中一个句子内部有多个\n换行符的时候阅读很困难，所以可以使用'''...'''来实现多行，sublime下在打出''' '''后可以直接回车换行。</p><p>&nbsp;<br></p><p>5.语言中的True 和 False 区分大小写。</p><p>&nbsp;<br></p><p>6.空值使用none来表示。</p><p>&nbsp;</p><p>7.PI为圆周率常量，除法//和MOD相同，求整。除法%,取余。</p><p>&nbsp;</p><p>8.中文在UTF-8编译后会占据3个字节，英文1个</p><p>b''表示为该字符串为bytes类型。</p><p>字符串后用.encode()来转换 例： &nbsp;'陈'.encode('ascii') &nbsp;输出为b'\xe9\x99\x88'</p><p>字符串在bytes格式下可以使用.decode()来转换成相应字符串 &nbsp;例： b'\xe9\x99\x88'.decode('utf-8') &nbsp;输出为 '陈'</p><p>同样可以使用 len('')来确定字符数 例如len(b'abc') = 3,len('中文'.encode('utf-8')) = 6</p><p>&nbsp;<br></p><p>9.<code>﻿</code></p><pre id="leanote_ace_1488763023073_0" class="ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">#!/usr/bin/env&nbsp;python3
+#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-﻿​</pre><p>&nbsp;在python 的开头写上这个头部，第一行表示在Lunix环境下为PYTHON可执行文件，第二行表示使用utf-8字符集。文本编辑器要使用utf-8 without BOM</p><p>&nbsp;<br></p><p>&nbsp;10. python的语言格式话方式与C语言相同。 使用%实现。使用%？作为占位符来表示 %d 整数 %f浮点数 %s字符串&nbsp;</p><p>&nbsp; &nbsp; 例: 'hello ,%s you have $%d' &nbsp;% ('chan',10000) &nbsp;输出 &nbsp;'hello chan, you have $10000'</p><p>&nbsp; &nbsp; &nbsp; &nbsp;使用%2d 或者 %02d &nbsp;这两者都规定了是有最少两位空间数，第一个 '%2d' % 2 输出 ' 2'，第二个'%02d' % 2 输出 '02'&nbsp;<br></p><p>&nbsp;<br></p><p>11.list 和 tuple ,</p><p>(1)list类似于数组，正序下标从0开始，倒序从-1开始。len()函数可以判定list长度。使用.append()可以将内容直接插入list尾部，使用.insert(nubmer,content)可以直接内容插入固定位置。删除尾部元素的时候可以使用.pop()方法。和数组一样，可以使用下标的方式直接将list内容达到替换。list内部是可以包含不同类型的内容，同时list内的元素可以是list。</p><p>例:classmate = ['jack','alan'] ,len(classmate) &nbsp;=2 ,classmate.append('niko') &nbsp;--&gt; ['jack','alan','niko'].</p><p>(2)tuple和LIST的使用方式是类似和相同的，主要是它是静态的，是不可变的。同时，tuple在只有一个元素的时候，申明方式比较特殊，要尤其记得。我们可以通过让tuple来加入一个list的方式，来达到实现对tuple内容内的'修改'。实质上是修改了LIST的内容，而tuple本身是没有修改的。<br></p><p>例：空tuple t = t(), 含有一个元素的tuple &nbsp;t=(1,) 要含有一个逗号来消除 (1)是数学运算还是tuple的歧义。</p><p>&nbsp;<br></p><p>12.if…else…和if...elif...else的判断，注意：要在IF后加上:号来标记，用缩进来表示内部代码。 同时，input是一个STR格式，需要用INT()函数来做一个类型转换达到判定。<br></p><p>例：</p><pre id="leanote_ace_1488763023095_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">i&nbsp;=&nbsp;input('i&nbsp;=&nbsp;')
+a&nbsp;=&nbsp;int(i)
+if&nbsp;0&lt;&nbsp;a&nbsp;&lt;3:
+	print&nbsp;('Ok!')
+</pre><p>&nbsp;<br></p><p>13.循环，格式如下：<br></p><p>使用if的循环：</p><pre id="leanote_ace_1488763023110_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">sum&nbsp;=&nbsp;0
+for&nbsp;x&nbsp;in&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9,&nbsp;10]:
+&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;=&nbsp;sum&nbsp;+&nbsp;x
+print(sum)&nbsp;</pre><p>使用while的循环：</p><p>&nbsp;<br></p><pre id="leanote_ace_1488763023124_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">sum&nbsp;=&nbsp;0
+n&nbsp;=&nbsp;99
+while&nbsp;n&nbsp;&gt;&nbsp;0:
+&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;=&nbsp;sum&nbsp;+&nbsp;n
+&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;n&nbsp;-&nbsp;2
+print(sum)</pre><p>&nbsp;(1)rang(5)，生成0-4 5个数字，使用list[range(5)]，生成[0，1，2，3，4]</p><p>&nbsp;<br></p><p>14.break语句</p><p>添加IF和BREAK之前，是有1打印到100，加入后，在N=11时，break生效，跳出循环，打印出END。</p><pre id="leanote_ace_1488763023137_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">n&nbsp;=&nbsp;1
+while&nbsp;n&nbsp;&lt;=&nbsp;100:
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;n&nbsp;&gt;&nbsp;10:&nbsp;#&nbsp;当n&nbsp;=&nbsp;11时，条件满足，执行break语句
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break&nbsp;#&nbsp;break语句会结束当前循环
+&nbsp;&nbsp;&nbsp;&nbsp;print(n)
+&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;n&nbsp;+&nbsp;1
+print('END')</pre><p>&nbsp;<br></p><p>15.continue语句</p><p>添加continue之前，是有1打印到100，加入后，在偶数情况下讲不被输出，继续下一个循环，所以输出内容是1-100的奇数。</p><pre id="leanote_ace_1488763023152_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">n&nbsp;=&nbsp;0
+while&nbsp;n&nbsp;&lt;&nbsp;10:
+&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;n&nbsp;+&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;n&nbsp;%&nbsp;2&nbsp;==&nbsp;0:&nbsp;#&nbsp;如果n是偶数，执行continue语句
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue&nbsp;#&nbsp;continue语句会直接继续下一轮循环，后续的print()语句不会执行
+&nbsp;&nbsp;&nbsp;&nbsp;print(n)</pre><p>&nbsp;</p><p>16.dict字典：类似于其他语言中的map。</p><p>和list比较，dict有以下几个特点：</p><ol><li>查找和插入的速度极快，不会随着key的增加而变慢；</li><li>需要占用大量的内存，内存浪费多。</li></ol><p>与list相反：</p><ol><li>查找和插入的时间随着元素的增加而增加；</li><li>占用空间小，浪费内存很少。</li></ol><pre id="leanote_ace_1488763023168_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;d&nbsp;=&nbsp;{'Michael':&nbsp;95,&nbsp;'Bob':&nbsp;75,&nbsp;'Tracy':&nbsp;85}
+&gt;&gt;&gt;d['Michael']&nbsp;
+&gt;&gt;&gt;&nbsp;95</pre><p>&nbsp;<br></p><p>&nbsp;<br></p><p>17.set 与dict类似，只包含KEY字段，同时，是无序不重复排列的，且可以做数学上的交，并集计算的。</p><pre id="leanote_ace_1488763023182_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">&gt;&gt;&gt;&nbsp;s1&nbsp;=&nbsp;set([1,&nbsp;2,&nbsp;3])
+&gt;&gt;&gt;&nbsp;s2&nbsp;=&nbsp;set([2,&nbsp;3,&nbsp;4])
+&gt;&gt;&gt;&nbsp;s1&nbsp;&amp;&nbsp;s2
+{2,&nbsp;3}
+&gt;&gt;&gt;&nbsp;s1&nbsp;|&nbsp;s2
+{1,&nbsp;2,&nbsp;3,&nbsp;4}</pre><p>&nbsp;<br></p><p>18.str是一个不可变变量的。</p><p>&nbsp;<br></p><h2>Function</h2><p>19.定义函数： &nbsp;可以在函数判断后加入pass来实现空函数，让程序往下走。</p><pre id="leanote_ace_1488763023250_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">def&nbsp;my_abs(x):
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;x&nbsp;&gt;=&nbsp;0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;-x</pre><p>参数检测<br></p><pre id="leanote_ace_1488763023271_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">def&nbsp;my_abs(x):
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;isinstance(x,&nbsp;(int,&nbsp;float)):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;TypeError('bad&nbsp;operand&nbsp;type')
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;x&nbsp;&gt;=&nbsp;0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;-x</pre><p>导入已有函数包</p><pre id="leanote_ace_1488763023287_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">import&nbsp;math</pre><p>&nbsp;python的多返回值是一个truple<br></p><p>&nbsp;<br></p><p>20.函数参数</p><p>(1)位置参数：例如f(x) 其中的x就是位置参数，使用函数的时候一定要输入参数才可以。</p><p>(2)默认参数：例如f(x,n =2 ),在缺省不对n赋值的时候，默认=2 。这时候的f(1)即为f(x=1,n =2)，默认参数必须指向不变对象。</p><p>(3)可变参数：使用list或者truple来传入参数计算，参数的个数是不固定的。</p><pre id="leanote_ace_1488763023302_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">def&nbsp;calc(numbers):&nbsp;#def&nbsp;calc(*numbers):&nbsp;&nbsp;使用这种就可以来将list和tuple
+&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;=&nbsp;0
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;n&nbsp;in&nbsp;numbers:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;=&nbsp;sum&nbsp;+&nbsp;n&nbsp;*&nbsp;n
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;sum</pre><p>使用的时候要先自己拼起来一个list或者tuple。<br></p><p>而当我们已有一个list或者tuple的时候，使用这种方式进行传递很麻烦。</p><pre id="leanote_ace_1488763023317_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">&gt;&gt;&gt;&nbsp;nums&nbsp;=&nbsp;[1,&nbsp;2,&nbsp;3]
+&gt;&gt;&gt;&nbsp;calc(nums[0],&nbsp;nums[1],&nbsp;nums[2])&nbsp;</pre><p>用*number直接将list或者tuple直接传入当做参数使用。 来简化。</p><pre id="leanote_ace_1488763023334_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">&gt;&gt;&gt;&nbsp;nums&nbsp;=&nbsp;[1,&nbsp;2,&nbsp;3]
+&gt;&gt;&gt;&nbsp;calc(*nums)</pre><p>﻿(4)关键字参数：可变参数将变量转换成list或tuple，关键字参数在函数内测组成一个dict</p><pre id="leanote_ace_1488763023350_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">def&nbsp;person(name,&nbsp;age,&nbsp;**kw):&nbsp;&nbsp;#**kw&nbsp;为关键字参数
+&nbsp;&nbsp;&nbsp;&nbsp;print('name:',&nbsp;name,&nbsp;'age:',&nbsp;age,&nbsp;'other:',&nbsp;kw)
+
+&gt;&gt;&gt;&nbsp;person('Michael',&nbsp;30)
+&gt;&gt;&gt;&nbsp;name:&nbsp;Michael&nbsp;age:&nbsp;30&nbsp;other:&nbsp;{}
+
+&gt;&gt;&gt;&nbsp;person('Bob',&nbsp;35,&nbsp;city='Beijing')
+&gt;&gt;&gt;&nbsp;name:&nbsp;Bob&nbsp;age:&nbsp;35&nbsp;other:&nbsp;{'city':&nbsp;'Beijing'}</pre><p>&nbsp;<br></p><p>&nbsp;(5)命名关键字参数，需要使用*来分隔开</p><pre id="leanote_ace_1488763023366_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">def&nbsp;person(name,&nbsp;age,&nbsp;*,&nbsp;city,&nbsp;job):
+&nbsp;&nbsp;&nbsp;&nbsp;print(name,&nbsp;age,&nbsp;city,&nbsp;job)</pre><p>&nbsp;当前面有一个可变参数的时候就不需要了<br></p><pre id="leanote_ace_1488763023382_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">def&nbsp;person(name,&nbsp;age,&nbsp;*args,&nbsp;city,&nbsp;job):
+&nbsp;&nbsp;&nbsp;&nbsp;print(name,&nbsp;age,&nbsp;args,&nbsp;city,&nbsp;job)</pre><p>命名关键字参数必须传入参数名</p><p>(6)参数是有组合使用的情况的，所以使用的时候参照顺序<span style="text-decoration: underline;" data-mce-style="text-decoration: underline;">【必选参数、默认参数、可变参数、命名关键字参数和关键字参数】</span></p><p>&nbsp;<br></p><p>21.递归函数，使用递归函数要注意栈堆溢出</p><pre id="leanote_ace_1488763023399_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">def&nbsp;fact(n):
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;n==1:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;n&nbsp;*&nbsp;fact(n&nbsp;-&nbsp;1)</pre><p>&nbsp;解决溢出的办法是使用尾递归，在有针对尾递归有优化的时候栈的大小是不变化的。</p><pre id="leanote_ace_1488763023415_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">def&nbsp;fact(n):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;fact_iter(n,&nbsp;1)
+
+def&nbsp;fact_iter(num,&nbsp;product):
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;num&nbsp;==&nbsp;1:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;product
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;fact_iter(num&nbsp;-&nbsp;1,&nbsp;num&nbsp;*&nbsp;product)</pre><p>&nbsp;和上面的函数对比的话，这个递归只产生函数本身。<br></p><p>&nbsp;</p><h2>Advanced</h2><p>22.切片：有一个list ,L[] ，使用L[:5]取前五个元素，L[-5:]取后五个元素，L[10:20]取下标10-20的元素。L[::5]每5个取一个元素，L[:10:2]前10个元素，每2个取一个。</p><p>&nbsp;<br></p><p>23.迭代：使用 for &nbsp;X in OBJ 只要OBJ是可以迭代的对象，那么即可迭代。使用函数 Iterable来检测是否可以迭代。</p><pre id="leanote_ace_1488763023430_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;&nbsp;from&nbsp;collections&nbsp;import&nbsp;Iterable
+&gt;&gt;&gt;&nbsp;isinstance('abc',&nbsp;Iterable)&nbsp;#&nbsp;str是否可迭代
+True&nbsp;</pre><p>&nbsp;<br></p><p>24.列表生成式：直接在list中来嵌套循环等操作来是实现</p><pre id="leanote_ace_1488763023445_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">&gt;&gt;&gt;&nbsp;[m&nbsp;+&nbsp;n&nbsp;for&nbsp;m&nbsp;in&nbsp;'ABC'&nbsp;for&nbsp;n&nbsp;in&nbsp;'XYZ']
+['AX',&nbsp;'AY',&nbsp;'AZ',&nbsp;'BX',&nbsp;'BY',&nbsp;'BZ',&nbsp;'CX',&nbsp;'CY',&nbsp;'CZ']</pre><p>&nbsp;<br></p><p>25.生成器 generator 将列表生成式的[]换成()就是一个生成器</p><pre id="leanote_ace_1488763023461_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">列生成式↓
+&gt;&gt;&gt;&nbsp;L&nbsp;=&nbsp;[x&nbsp;*&nbsp;x&nbsp;for&nbsp;x&nbsp;in&nbsp;range(10)]
+&gt;&gt;&gt;&nbsp;L
+[0,&nbsp;1,&nbsp;4,&nbsp;9,&nbsp;16,&nbsp;25,&nbsp;36,&nbsp;49,&nbsp;64,&nbsp;81]
+生成器↓
+&gt;&gt;&gt;&nbsp;g&nbsp;=&nbsp;(x&nbsp;*&nbsp;x&nbsp;for&nbsp;x&nbsp;in&nbsp;range(10))
+&gt;&gt;&gt;&nbsp;g
+&lt;generator&nbsp;object&nbsp;&lt;genexpr&gt;&nbsp;at&nbsp;0x1022ef630&gt;&nbsp;</pre><p>&nbsp;列表生成式是可以逐行打印出来的，但是生成器不全部，一个个显示只能使用next()来获得，同样可以使用FOR 来迭代循环使用。<br></p><pre id="leanote_ace_1488763023476_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">&gt;&gt;&gt;&nbsp;next(g)
+0&nbsp;</pre><p>普通的方式输出斐波拉契数列用</p><pre id="leanote_ace_1488763023491_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 210px;">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+def&nbsp;fib(max):
+	n,a,b&nbsp;=&nbsp;0,0,1
+	while&nbsp;n&lt;max:
+		print(b)&nbsp;#&nbsp;print(b)改成yield&nbsp;b;这个函数就是一个generator
+		a,b=b,a+b
+		n&nbsp;=&nbsp;n+1
+	return&nbsp;'done'
+		
+fib(5)</pre><p>&nbsp;但是用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中。后续再讲。<br></p><pre id="leanote_ace_1488763023508_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">&nbsp;while&nbsp;True:
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;=&nbsp;next(g)
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('g:',&nbsp;x)
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;StopIteration&nbsp;as&nbsp;e:
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Generator&nbsp;return&nbsp;value:',&nbsp;e.value)
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</pre><p>&nbsp;</p><p>26.迭代器<br></p><p>使用isinstance 来检查对象是不是 Iterable，</p><p>可以被for迭代调用的对象，成为可迭代对象：Iterable</p><pre id="leanote_ace_1488763023522_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;&nbsp;from&nbsp;collections&nbsp;import&nbsp;Iterable
+&gt;&gt;&gt;&nbsp;isinstance([],&nbsp;Iterable)
+True</pre><p>可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator 同样可以使用insatance()函数来检测。</p><p>将list、dict、str&nbsp;等不是迭代器的东西可以使用iter()函数转换。</p><pre id="leanote_ace_1488763023537_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;isinstance(iter([]),&nbsp;Iterator)
+True
+&gt;&gt;&gt;&nbsp;isinstance(iter('abc'),&nbsp;Iterator)
+True</pre><p>&nbsp;<br></p><h2>Function Porgamming</h2><p>27.高阶函数 函数名也是一种变量,将函数名指定为变量后，默认函数就失去原来的功能。</p><pre id="leanote_ace_1488763023553_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">&gt;&gt;&gt;&nbsp;abs&nbsp;=&nbsp;10
+&gt;&gt;&gt;&nbsp;abs(-10)
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"&lt;stdin&gt;",&nbsp;line&nbsp;1,&nbsp;in&nbsp;&lt;module&gt;
+TypeError:&nbsp;'int'&nbsp;object&nbsp;is&nbsp;not&nbsp;callable</pre><p>&nbsp;但是可以将函数赋值给变量来获得功能。<br></p><pre id="leanote_ace_1488763023573_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;abs
+&gt;&gt;&gt;&nbsp;f(-10)
+10</pre><p>&nbsp;这样我们通过这种方式可以获得高级函数编程<br></p><pre id="leanote_ace_1488763023605_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">def&nbsp;add(x,&nbsp;y,&nbsp;f):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;f(x)&nbsp;+&nbsp;f(y)
+
+&gt;&gt;&gt;&nbsp;add(-5,&nbsp;6,&nbsp;abs)
+11</pre><p>&nbsp;<br></p><p>28.map/reduce</p><p>map()是函数接受两个参数，一个是函数，一个是Iterable,map将传入的函数依次做用于序列的每一个元素，并把结果作为一个Iterator返回。</p><p>ex:两个的结果是一样的，但是使用</p><pre id="leanote_ace_1488763023621_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 294px;">def&nbsp;f(x):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x&nbsp;*&nbsp;x
+#for循环
+L&nbsp;=&nbsp;[]
+for&nbsp;n&nbsp;in&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9]:
+&nbsp;&nbsp;&nbsp;&nbsp;L.append(f(n))
+print(L)&nbsp;
+&gt;&gt;&gt;[1,&nbsp;4,&nbsp;9,&nbsp;16,&nbsp;25,&nbsp;36,&nbsp;49,&nbsp;64,&nbsp;81]
+#使用MAP
+&gt;&gt;&gt;&nbsp;r&nbsp;=&nbsp;map(f,&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9])
+&gt;&gt;&gt;&nbsp;list(r)
+&gt;&gt;&gt;[1,&nbsp;4,&nbsp;9,&nbsp;16,&nbsp;25,&nbsp;36,&nbsp;49,&nbsp;64,&nbsp;81]
+#简单的就可以发现一行来代替
+list(map(f,[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9]))</pre><p>reduce把一个函数作用在一个序列[x1, x2, x3, ...]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算。</p><p>ex:求和<br></p><pre id="leanote_ace_1488763023638_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">&gt;&gt;&gt;&nbsp;from&nbsp;functools&nbsp;import&nbsp;reduce
+&gt;&gt;&gt;&nbsp;def&nbsp;fn(x,&nbsp;y):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x&nbsp;*&nbsp;10&nbsp;+&nbsp;y
+...
+&gt;&gt;&gt;&nbsp;reduce(fn,&nbsp;[1,&nbsp;3,&nbsp;5,&nbsp;7,&nbsp;9])
+13579</pre><p>&nbsp;<br></p><p>29.filter<br></p><p>filter()是函数接受两个参数，一个是函数，一个是序列。与map相似，同样是将函数一个个作用于序列内的对象，但是filter是返回Ture和False来决定元素是保留还是去除。</p><pre id="leanote_ace_1488763023654_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">def&nbsp;is_odd(n):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;n&nbsp;%&nbsp;2&nbsp;==&nbsp;1
+
+list(filter(is_odd,&nbsp;[1,&nbsp;2,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;9,&nbsp;10,&nbsp;15]))</pre><p>&nbsp;<br></p><p>30.sorted</p><p>sorted类似于Map，将函数一个个作用于序列中的对象，然后将对象按照一定的顺序进行排列。</p><pre id="leanote_ace_1488763023669_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+L&nbsp;=&nbsp;[('Bob',&nbsp;75),&nbsp;('Adam',&nbsp;92),&nbsp;('Bart',&nbsp;66),&nbsp;('Lisa',&nbsp;88)]
+
+def&nbsp;by_name(t):
+	return&nbsp;t[1]
+	
+L2&nbsp;=&nbsp;sorted(L,&nbsp;key=by_name,reverse=True)#recerse&nbsp;是反序排列的意思。
+print(L2)</pre><p>&nbsp;<br></p><p>31.返回函数：</p><p>通过对变量赋值为函数的时候，来延迟对函数的计算，当使用的时候再真正的计算来获得好的性能。</p><pre id="leanote_ace_1488763023685_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">def&nbsp;lazy_sum(*args):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;sum():
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ax&nbsp;=&nbsp;0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;n&nbsp;in&nbsp;args:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ax&nbsp;=&nbsp;ax&nbsp;+&nbsp;n
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ax
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;sum</pre><p>这时候我们所返回的不是所以的和，而是带有要计算元素的求和函数。<br></p><pre id="leanote_ace_1488763023701_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;lazy_sum(1,&nbsp;3,&nbsp;5,&nbsp;7,&nbsp;9)
+&gt;&gt;&gt;&nbsp;f
+&lt;function&nbsp;lazy_sum.&lt;locals&gt;.sum&nbsp;at&nbsp;0x101c6ed90&gt;</pre><p>在调用的时候，并没有计算，而是在使用过f的时候才真正的返回了和。</p><p>这里要描述的是当我们连续两次调用的时候，即使传入的是相同的参数，返回的都是一个新的函数。</p><pre id="leanote_ace_1488763023717_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;f1&nbsp;=&nbsp;lazy_sum(1,&nbsp;3,&nbsp;5,&nbsp;7,&nbsp;9)
+&gt;&gt;&gt;&nbsp;f2&nbsp;=&nbsp;lazy_sum(1,&nbsp;3,&nbsp;5,&nbsp;7,&nbsp;9)
+&gt;&gt;&gt;&nbsp;f1==f2
+False</pre><p>&nbsp;<br></p><p>32.闭包<br></p><p>不要在任何返回函数中使用循环变量，不然在重复调用中，返回函数都会绑定循环变量当前的值，所返回的数据将不正确。</p><pre id="leanote_ace_1488763023733_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 315px;">def&nbsp;count():
+&nbsp;&nbsp;&nbsp;&nbsp;fs&nbsp;=&nbsp;[]
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;in&nbsp;range(1,&nbsp;4):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;f():
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;i*i
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fs.append(f)
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;fs
+
+f1,&nbsp;f2,&nbsp;f3&nbsp;=&nbsp;count()
+&gt;&gt;&gt;&nbsp;f1()
+9
+&gt;&gt;&gt;&nbsp;f2()
+9
+&gt;&gt;&gt;&nbsp;f3()
+9</pre><pre id="leanote_ace_1488763023750_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 336px;">def&nbsp;count():
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;f(j):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;g():
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;j*j
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;g
+&nbsp;&nbsp;&nbsp;&nbsp;fs&nbsp;=&nbsp;[]
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;in&nbsp;range(1,&nbsp;4):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fs.append(f(i))&nbsp;#&nbsp;f(i)立刻被执行，因此i的当前值被传入f()
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;fs
+&gt;&gt;&gt;&nbsp;f1,&nbsp;f2,&nbsp;f3&nbsp;=&nbsp;count()
+&gt;&gt;&gt;&nbsp;f1()
+1
+&gt;&gt;&gt;&nbsp;f2()
+4
+&gt;&gt;&gt;&nbsp;f3()
+9</pre><p>&nbsp;<br></p><p>33.匿名函数lambda</p><p>限制：只有一个表达式，没有return。</p><pre id="leanote_ace_1488763023768_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;lambda&nbsp;x:&nbsp;x&nbsp;*&nbsp;x
+&gt;&gt;&gt;&nbsp;f
+&lt;function&nbsp;&lt;lambda&gt;&nbsp;at&nbsp;0x101c6ef28&gt;
+&gt;&gt;&gt;&nbsp;f(5)
+25</pre><p>&nbsp;<br></p><p>34.装饰器 Decorator</p><p>在不改变函数定义的情况下，在代码运行期间增加功能的方式称之为装饰器，实际上就是返回函数的高阶函数。</p><pre id="leanote_ace_1488763023784_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">def&nbsp;log(text):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;decorator(func):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;wrapper(*args,&nbsp;**kw):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('%s&nbsp;%s():'&nbsp;%&nbsp;(text,&nbsp;func.__name__))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;func(*args,&nbsp;**kw)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;wrapper
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;decorator</pre><pre id="leanote_ace_1488763023800_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">@log
+def&nbsp;now():
+&nbsp;&nbsp;&nbsp;&nbsp;print('2015-3-25')</pre><pre id="leanote_ace_1488763023817_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;&nbsp;now()
+execute&nbsp;now():
+2015-3-25</pre><pre id="leanote_ace_1488763023833_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">now&nbsp;=&nbsp;log('execute')(now)</pre><p>实际的执行方式可以视为上面那句，先执行log(execute),然后执行decorator(new),最终返回warapper函数。在这里的时候decorator已经变成了wrapper了。我们需要把now的__name__属性复制到wrapper中。但是不能使用wrapper.__name__= now.__name__这种。使用内置的functools.wraps。使用一下格式来书写。<br></p><pre id="leanote_ace_1488763023849_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 210px;">import&nbsp;functools
+
+def&nbsp;log(text):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;decorator(func):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@functools.wraps(func)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;wrapper(*args,&nbsp;**kw):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('%s&nbsp;%s():'&nbsp;%&nbsp;(text,&nbsp;func.__name__))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;func(*args,&nbsp;**kw)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;wrapper
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;decorator</pre><p>﻿&nbsp;<br></p><p>35.偏函数</p><p>使用functools.partial来固定一些函数的参数达到快速生成函数的目的。</p><pre id="leanote_ace_1488763023867_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">def&nbsp;int2(x,&nbsp;base=2):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;int(x,&nbsp;base)</pre><pre id="leanote_ace_1488763023883_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">int2&nbsp;=&nbsp;functools.partial(int,&nbsp;base=2)</pre><p>&nbsp;<br></p><h2>Module</h2><p>36.模块</p><p>1.主要讲解怎么将PY分包组织，每个包都必须有__init.py__.py，才能被认可为包，其中__init__.py可以是空文件也可以是有代码的。</p><p>2.使用模块 import **</p><p>3.作用域：变量名是公开的就可以直接引用（EX: abc）,特殊变量是可以直接访问，但是有特殊用途。（EX:__author__）,私有变量是不能被直接访问的，但是是可以访问的，python没有完全不可访问的韩硕或者变量。但是在实际使用中，我们会对此有些控制。所以用函数嵌套的方式来实现。</p><pre id="leanote_ace_1488763023903_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 231px;">def&nbsp;_private_1(name):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'Hello,&nbsp;%s'&nbsp;%&nbsp;name
+
+def&nbsp;_private_2(name):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'Hi,&nbsp;%s'&nbsp;%&nbsp;name
+
+def&nbsp;greeting(name):
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(name)&nbsp;&gt;&nbsp;3:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;_private_1(name)
+&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;_private_2(name)</pre><p>&nbsp;<br></p><p>37.第三方模块</p><p>1.使用pip包管理工具来实现。</p><pre id="leanote_ace_1488763023924_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">pip&nbsp;install&nbsp;Pillow&nbsp;#Pillow是一个图片处理模块。</pre><p>2.模块搜索路径</p><p>import 包的时候可能会找不到报错，我们要调整Python包的路径。</p><p>1)修改sys.path</p><p>2)和环境变量一样设置pyhtonpath<br></p><p>&nbsp;<br></p><h2>Object Oriented Programming</h2><p>38.类和实例</p><pre id="leanote_ace_1488763023943_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">class&nbsp;Student(object):&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name,&nbsp;score):&nbsp;&nbsp;#构造Student类
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.score&nbsp;=&nbsp;score
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;print_score(self):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#构造类中的一个方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('%s:&nbsp;%s'&nbsp;%&nbsp;(self.name,&nbsp;self.score))</pre><p><br></p><p>39.访问限制</p><p>class内部有属性和方法，外部代码可以直接调用。是可以自由修改的。</p><pre id="leanote_ace_1488764821073_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">&gt;&gt;&gt;&nbsp;bart&nbsp;=&nbsp;Student('Bart&nbsp;Simpson',&nbsp;98)
+&gt;&gt;&gt;&nbsp;bart.score
+98
+&gt;&gt;&gt;&nbsp;bart.score&nbsp;=&nbsp;59
+&gt;&gt;&gt;&nbsp;bart.score
+59&nbsp;</pre><p>在变量前面添加两个下划线__就可以把变量变成私有变量，不能够外部访问。</p><pre id="leanote_ace_1488866509279_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">class&nbsp;Student(object):
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name,&nbsp;score):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__name&nbsp;=&nbsp;name
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__score&nbsp;=&nbsp;score
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;print_score(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('%s:&nbsp;%s'&nbsp;%&nbsp;(self.__name,&nbsp;self.__score))</pre><pre id="leanote_ace_1488866528095_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">&gt;&gt;&gt;&nbsp;bart&nbsp;=&nbsp;Student('Bart&nbsp;Simpson',&nbsp;98)
+&gt;&gt;&gt;&nbsp;bart.__name
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"&lt;stdin&gt;",&nbsp;line&nbsp;1,&nbsp;in&nbsp;&lt;module&gt;
+AttributeError:&nbsp;'Student'&nbsp;object&nbsp;has&nbsp;no&nbsp;attribute&nbsp;'__name'&nbsp;
+</pre><p>&nbsp;我们要获得这些变量的值或者对这些值做设定的时候只能通过使用增加方法的方式实现了：因为方法是可以自己编写定制的，所以在使用的时候还可以通过方法来检验函数输入值的正确与否。<br></p><pre id="leanote_ace_1488866578199_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 336px;">class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_name(self):&nbsp;&nbsp;&nbsp;#定义获得数据name
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.__name
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_score(self):&nbsp;&nbsp;#定义获得数据score的方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.__score&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;set_score(self,&nbsp;score):&nbsp;#定义设定score的方法
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__score&nbsp;=&nbsp;score
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;set_score(self,&nbsp;score):&nbsp;#扩充定定义score的方法，包含函数参数检验
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;0&nbsp;&lt;=&nbsp;score&nbsp;&lt;=&nbsp;100:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__score&nbsp;=&nbsp;score
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('bad&nbsp;score')</pre><p>&nbsp;是不是一定不能外部访问这些私有变量呢？不是，是Python编译器将它编译为了__Student__name，所以我们通过__Student__name来直接访问，但是不推荐这么做。<br></p><p>&nbsp;<br></p><p>40.继承和多态</p><p>定义一个class的时候，可以从某个已经有的class来集成，新的class就成为子集（Subclass）,被继承的class被成为基类、父类、超类(Base class ,Super class)。</p><p>我们使用一个类来继承的时候是可以自动集成获得父类的所有方法，如果自己在子类中定义同名方法的时候，会直接调用子类的方法。这种子类用定义的方式是多态的一种。</p><pre id="leanote_ace_1488867781486_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">class&nbsp;Animal(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;run(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Animal&nbsp;is&nbsp;running...')</pre><pre id="leanote_ace_1488867788179_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">class&nbsp;Dog(Animal):
+&nbsp;&nbsp;&nbsp;&nbsp;pass
+
+
+&gt;&gt;&gt;dog&nbsp;=&nbsp;Dog()
+&gt;&gt;&gt;dog.run()
+
+Animal&nbsp;is&nbsp;running...</pre><pre id="leanote_ace_1488867865176_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 252px;">class&nbsp;Dog(Animal):
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;run(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Dog&nbsp;is&nbsp;running...')
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;eat(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Eating&nbsp;meat...')&nbsp;
+
+&gt;&gt;&gt;dog&nbsp;=&nbsp;Dog()
+&gt;&gt;&gt;dog.run()
+
+dog&nbsp;is&nbsp;running...</pre><p>&nbsp;类是和系统自带的数据类型没有区别的。同时，子类不是但数据自己子类的类型，同时也是父类的类型。<br></p><pre id="leanote_ace_1488868698568_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 252px;">a&nbsp;=&nbsp;list()&nbsp;#&nbsp;a是list类型
+b&nbsp;=&nbsp;Animal()&nbsp;#&nbsp;b是Animal类型
+c&nbsp;=&nbsp;Dog()&nbsp;#&nbsp;c是Dog类型&nbsp;
+
+&gt;&gt;&gt;&nbsp;isinstance(a,&nbsp;list)
+True
+&gt;&gt;&gt;&nbsp;isinstance(b,&nbsp;Animal)
+True
+&gt;&gt;&gt;&nbsp;isinstance(c,&nbsp;Dog)
+True
+&gt;&gt;&gt;&nbsp;isinstance(c,&nbsp;Animal)
+True</pre><p>&nbsp;多态的另一种体现是当我们定一个基于父类的函数的时候，我们在传入子类参数的时候也是能够运行的。我们在新增新类的时候不需要去修改参数，获得便捷的扩充。<br></p><pre id="leanote_ace_1488868798352_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 231px;">def&nbsp;run_twice(animal):
+&nbsp;&nbsp;&nbsp;&nbsp;animal.run()
+&nbsp;&nbsp;&nbsp;&nbsp;animal.run()
+
+&gt;&gt;&gt;&nbsp;run_twice(Animal())
+Animal&nbsp;is&nbsp;running...
+Animal&nbsp;is&nbsp;running...
+
+&gt;&gt;&gt;&nbsp;run_twice(Dog())
+Dog&nbsp;is&nbsp;running...
+Dog&nbsp;is&nbsp;running...</pre><p>由运行时该对象的确切类型决定，这就是多态真正的威力：</p><p>这就是著名的“开闭”原则：1.对扩展开放：允许新增子类；2.对修改封闭：不需要修改依赖类型的等函数。</p><p><br></p><p>41.静态预言和动态语言</p><p>对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p><p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p><pre id="leanote_ace_1488869079883_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">class&nbsp;Timer(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;run(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Start...')</pre><p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。<br></p><p>&nbsp;<br></p><p>42.获取对象信息</p><p>我们怎么知道一个对象什么类型，有什么方法呢？</p><p>1)使用type(),简单的对象类型我们可以直接写，例如：INT等，判断是否函数等，我们使用type()模块的定义常量来判断。(详阅文档)</p><pre id="leanote_ace_1488869192267_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">&gt;&gt;&gt;&nbsp;type(123)
+&lt;class&nbsp;'int'&gt;&nbsp;
+
+&gt;&gt;&gt;&nbsp;type(abs)
+&lt;class&nbsp;'builtin_function_or_method'&gt;</pre><p>2)使用isinstance(),对于calss的继承关系来说。使用type()不是很方便。使用上面的Animal类的例子，我们的继承关系是：</p><pre id="leanote_ace_1488869633330_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">object&nbsp;-&gt;&nbsp;Animal&nbsp;-&gt;&nbsp;Dog&nbsp;-&gt;&nbsp;Husky</pre><pre id="leanote_ace_1488875656216_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 210px;">&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;Animal()
+&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;Dog()
+&gt;&gt;&gt;&nbsp;h&nbsp;=&nbsp;Husky()&nbsp;
+
+&gt;&gt;&gt;&nbsp;isinstance(h,&nbsp;Husky)
+True
+&gt;&gt;&gt;&nbsp;isinstance(h,&nbsp;Dog)
+True
+&gt;&gt;&gt;&nbsp;isinstance(d,&nbsp;Husky)
+False</pre><p>isinstance()也可以来判定基本类型</p><pre id="leanote_ace_1488875722399_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;isinstance('a',&nbsp;str)
+True
+&gt;&gt;&gt;&nbsp;isinstance([1,&nbsp;2,&nbsp;3],&nbsp;(list,&nbsp;tuple))
+True</pre><p>3)使用dir(),使用后会返回一个包含字符串的list,包含所要求对象的多有属性和方法</p><pre id="leanote_ace_1488876158566_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">&gt;&gt;&gt;&nbsp;dir('ABC')
+['__add__',&nbsp;'__class__',&nbsp;'__contains__',&nbsp;'__delattr__',&nbsp;'__dir__',&nbsp;'__doc__',&nbsp;'__eq__',&nbsp;'__format__',&nbsp;'__ge__',&nbsp;'__getattribute__',&nbsp;'__getitem__',&nbsp;'__getnewargs__',&nbsp;'__gt__',&nbsp;'__hash__',&nbsp;'__init__',&nbsp;'__iter__',&nbsp;'__le__',&nbsp;'__len__',&nbsp;..]&nbsp;</pre><p>&nbsp;<br></p><p>43.实例属性和类属性</p><p>在给实例绑定属性的方式是通过实例变量，或者SELF变量实现的。</p><pre id="leanote_ace_1489391500326_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name
+
+s&nbsp;=&nbsp;Student('Bob')
+s.score&nbsp;=&nbsp;90</pre><p>但是同时候，我们可以直接在类中定义一个属性。叫做类属性。</p><pre id="leanote_ace_1489391550956_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;'Student'</pre><p>&nbsp;但是，当我们定义一个类属性后，再从类中定义一个实例时候。实例仍然是可以访问到的。只是，在属性名字相同的时候，实例属性会覆盖类属性。<br></p><pre id="leanote_ace_1489391688373_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 819px;">实例属性和类属性
+
+阅读:&nbsp;134860
+由于Python是动态语言，根据类创建的实例可以任意绑定属性。
+
+给实例绑定属性的方法是通过实例变量，或者通过self变量：
+
+class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name
+
+s&nbsp;=&nbsp;Student('Bob')
+s.score&nbsp;=&nbsp;90
+但是，如果Student类本身需要绑定一个属性呢？可以直接在class中定义属性，这种属性是类属性，归Student类所有：
+
+class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;'Student'
+当我们定义了一个类属性后，这个属性虽然归类所有，但类的所有实例都可以访问到。来测试一下：
+
+&gt;&gt;&gt;&nbsp;class&nbsp;Student(object):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;'Student'
+...
+&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student()&nbsp;#&nbsp;创建实例s
+&gt;&gt;&gt;&nbsp;print(s.name)&nbsp;#&nbsp;打印name属性，因为实例并没有name属性，所以会继续查找class的name属性
+Student
+&gt;&gt;&gt;&nbsp;print(Student.name)&nbsp;#&nbsp;打印类的name属性
+Student
+&gt;&gt;&gt;&nbsp;s.name&nbsp;=&nbsp;'Michael'&nbsp;#&nbsp;给实例绑定name属性
+&gt;&gt;&gt;&nbsp;print(s.name)&nbsp;#&nbsp;由于实例属性优先级比类属性高，因此，它会屏蔽掉类的name属性
+Michael
+&gt;&gt;&gt;&nbsp;print(Student.name)&nbsp;#&nbsp;但是类属性并未消失，用Student.name仍然可以访问
+Student
+&gt;&gt;&gt;&nbsp;del&nbsp;s.name&nbsp;#&nbsp;如果删除实例的name属性
+&gt;&gt;&gt;&nbsp;print(s.name)&nbsp;#&nbsp;再次调用s.name，由于实例的name属性没有找到，类的name属性就显示出来了
+Student</pre><p>&nbsp;<br></p><h2>Advanced OOP</h2><p>44.__slots__</p><p>我们创建一个类的实例后，我们可以给该实例绑定任何属性和方法。</p><p>但是，我们在给实例绑定方法后，并不能在其他新的同类实例中使用。</p><pre id="leanote_ace_1489392025186_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 336px;">class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;pass
+
+&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student()
+&gt;&gt;&gt;&nbsp;s.name&nbsp;=&nbsp;'Michael'&nbsp;#&nbsp;动态给实例绑定一个属性
+&gt;&gt;&gt;&nbsp;print(s.name)
+Michael
+
+&gt;&gt;&gt;&nbsp;def&nbsp;set_age(self,&nbsp;age):&nbsp;#&nbsp;定义一个函数作为实例方法
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age&nbsp;=&nbsp;age
+...
+&gt;&gt;&gt;&nbsp;from&nbsp;types&nbsp;import&nbsp;MethodType
+&gt;&gt;&gt;&nbsp;s.set_age&nbsp;=&nbsp;MethodType(set_age,&nbsp;s)&nbsp;#&nbsp;给实例绑定一个方法
+&gt;&gt;&gt;&nbsp;s.set_age(25)&nbsp;#&nbsp;调用实例方法
+&gt;&gt;&gt;&nbsp;s.age&nbsp;#&nbsp;测试结果
+25</pre><pre id="leanote_ace_1489392240303_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">&gt;&gt;&gt;&nbsp;s2&nbsp;=&nbsp;Student()&nbsp;#&nbsp;创建新的实例
+&gt;&gt;&gt;&nbsp;s2.set_age(25)&nbsp;#&nbsp;尝试调用方法
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"&lt;stdin&gt;",&nbsp;line&nbsp;1,&nbsp;in&nbsp;&lt;module&gt;
+AttributeError:&nbsp;'Student'&nbsp;object&nbsp;has&nbsp;no&nbsp;attribute&nbsp;'set_age'&nbsp;
+</pre><p>&nbsp;所以我们通过给类绑定新的方法来实现大家通用的方式。通常我们是把这些方法直接写在class中的，但是动态语言让我们实现了动态绑定。<br></p><pre id="leanote_ace_1489459806560_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;def&nbsp;set_score(self,&nbsp;score):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.score&nbsp;=&nbsp;score
+...
+&gt;&gt;&gt;&nbsp;Student.set_score&nbsp;=&nbsp;set_score&nbsp;</pre><pre id="leanote_ace_1489460933149_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student()
+&gt;&gt;&gt;&nbsp;s.set_score(100)
+&gt;&gt;&gt;&nbsp;s.score
+100</pre><p>&nbsp;如此一来我们要限制对类的方法的动态绑定，所以使用__slots__来做限制。我们只能绑定在__slots__中限定的方法。&nbsp; &nbsp;<br></p><pre id="leanote_ace_1489461332499_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;__slots__&nbsp;=&nbsp;('name',&nbsp;'age')&nbsp;#&nbsp;用tuple定义允许绑定的属性名称</pre><pre id="leanote_ace_1489461341193_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student()&nbsp;#&nbsp;创建新的实例
+&gt;&gt;&gt;&nbsp;s.name&nbsp;=&nbsp;'Michael'&nbsp;#&nbsp;绑定属性'name'
+&gt;&gt;&gt;&nbsp;s.age&nbsp;=&nbsp;25&nbsp;#&nbsp;绑定属性'age'
+&gt;&gt;&gt;&nbsp;s.score&nbsp;=&nbsp;99&nbsp;#&nbsp;绑定属性'score'
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"&lt;stdin&gt;",&nbsp;line&nbsp;1,&nbsp;in&nbsp;&lt;module&gt;
+AttributeError:&nbsp;'Student'&nbsp;object&nbsp;has&nbsp;no&nbsp;attribute&nbsp;'score'&nbsp;</pre><p>在使用是时候要注意，__slots__只对当前类有效果。对其的子类是无效的。</p><pre id="leanote_ace_1489469007981_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">&gt;&gt;&gt;&nbsp;class&nbsp;GraduateStudent(Student):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass
+...
+&gt;&gt;&gt;&nbsp;g&nbsp;=&nbsp;GraduateStudent()
+&gt;&gt;&gt;&nbsp;g.score&nbsp;=&nbsp;9999</pre><p>&nbsp;但是，在写好了__slots__的时候，我们可以使用添加方法的方式来添加属性。<br></p><pre id="leanote_ace_1489471745495_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 357px;">&gt;&gt;&gt;&nbsp;class&nbsp;Student(object):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__slots__&nbsp;=&nbsp;('a')
+
+&gt;&gt;&gt;def&nbsp;set_b(selt,b):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.b&nbsp;=&nbsp;b
+
+&gt;&gt;&gt;s&nbsp;=&nbsp;Student()
+&gt;&gt;&gt;s.a&nbsp;=&nbsp;1&nbsp;
+&gt;&gt;&gt;s.b&nbsp;=&nbsp;2
+AttributeError:&nbsp;'Student'&nbsp;object&nbsp;has&nbsp;no&nbsp;attribute&nbsp;'b'#说明没有b属性，也不能添加
+
+&gt;&gt;&gt;from&nbsp;types&nbsp;import&nbsp;MethodType
+&gt;&gt;&gt;Student.set_b&nbsp;=&nbsp;MethodType(set_b,Student)
+
+&gt;&gt;&gt;s.set_b(2)
+&gt;&gt;&gt;s.b
+2</pre><p>还有一种情况，当我们使用多个实例来更新类属性的时候，值会是最后一个</p><pre id="leanote_ace_1489475117509_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 861px;">&gt;&gt;&gt;&nbsp;class&nbsp;stu(object):&nbsp;#声明一个类
+...&nbsp;&nbsp;pass
+...
+&gt;&gt;&gt;&nbsp;def&nbsp;set_age(self,age):#给类绑定一个方法的方式来设置一个age属性
+...&nbsp;&nbsp;self.age&nbsp;=age
+...
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;stu()&nbsp;#实例a
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;stu()&nbsp;#实例b
+
+&gt;&gt;&gt;&nbsp;from&nbsp;types&nbsp;import&nbsp;MethodType&nbsp;&nbsp;#将方法set_age绑定在class上
+&gt;&gt;&gt;&nbsp;stu.set_age&nbsp;=&nbsp;MethodType(set_age,stu)
+&gt;&gt;&gt;&nbsp;stu.age
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"&lt;stdin&gt;",&nbsp;line&nbsp;1,&nbsp;in&nbsp;&lt;module&gt;
+AttributeError:&nbsp;type&nbsp;object&nbsp;'stu'&nbsp;has&nbsp;no&nbsp;attribute&nbsp;'age'&nbsp;&nbsp;#只有方法没有调用一次是没有age属性的
+
+&gt;&gt;&gt;&nbsp;a.set_age(20)&nbsp;&nbsp;#用实例a调用方法，修改了age属性
+&gt;&gt;&gt;&nbsp;a.age
+20
+&gt;&gt;&gt;&nbsp;stu.age&nbsp;&nbsp;#这时候的类属性是20
+20
+
+&gt;&gt;&gt;&nbsp;b.set_age(25)&nbsp;#用实例b调用方法，修改了age属性
+&gt;&gt;&gt;&nbsp;b.age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+25
+&gt;&gt;&gt;&nbsp;a.age
+25
+&gt;&gt;&gt;&nbsp;stu.age
+25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#这个时候，我们从上面可以看出set_age()是调用方法修改的是class的age属性。而不是a,b两个实例的属性
+
+&gt;&gt;&gt;&nbsp;a.age=10&nbsp;&nbsp;#我们这样的赋值才是赋予了实例a&nbsp;自己的同名age属性
+&gt;&gt;&gt;&nbsp;b.age=15
+&gt;&gt;&gt;&nbsp;a.age
+10
+&gt;&gt;&gt;&nbsp;b.age
+15
+&gt;&gt;&gt;&nbsp;stu.age
+25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#所以在此我们输出的结果不再一样，class的属性没有被修改。证明了实例属性和类属性的区别。</pre><p>&nbsp;<br></p><p>&nbsp;<a href="mailto:45.@property" data-mce-href="mailto:45.@property">45. @property</a></p><p>我们再绑定属性后，虽然对属性操作起来很简单方便，但是这样会把属性暴露，也不能够对值进行检测，所以我们通过方法来实现。</p><pre id="leanote_ace_1489479770293_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">s&nbsp;=&nbsp;Student()
+s.score&nbsp;=&nbsp;9999&nbsp;#这里就是我们将score属性暴露在外，且没有什么控制</pre><p>&nbsp;我们来定义set_score()和get_score()方法来做读取和值检测，这样就不能随意的对score来制作。<br></p><pre id="leanote_ace_1489479851098_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 231px;">class&nbsp;Student(object):
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_score(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self._score
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;set_score(self,&nbsp;value):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;isinstance(value,&nbsp;int):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('score&nbsp;must&nbsp;be&nbsp;an&nbsp;integer!')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;value&nbsp;&lt;&nbsp;0&nbsp;or&nbsp;value&nbsp;&gt;&nbsp;100:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('score&nbsp;must&nbsp;between&nbsp;0&nbsp;~&nbsp;100!')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._score&nbsp;=&nbsp;value</pre><pre id="leanote_ace_1489480165938_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student()
+&gt;&gt;&gt;&nbsp;s.set_score(60)&nbsp;#&nbsp;ok!
+&gt;&gt;&gt;&nbsp;s.get_score()
+60
+&gt;&gt;&gt;&nbsp;s.set_score(9999)
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;...
+ValueError:&nbsp;score&nbsp;must&nbsp;between&nbsp;0&nbsp;~&nbsp;100!&nbsp;</pre><p>&nbsp;但是这种方式，我们使用的时候不能狗直接使用要不停的调用，不是很方便。所有用@property来实现。</p><pre id="leanote_ace_1489480244223_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 273px;">class&nbsp;Student(object):
+
+&nbsp;&nbsp;&nbsp;&nbsp;@property
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;score(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self._score
+
+&nbsp;&nbsp;&nbsp;&nbsp;@score.setter
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;score(self,&nbsp;value):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;isinstance(value,&nbsp;int):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('score&nbsp;must&nbsp;be&nbsp;an&nbsp;integer!')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;value&nbsp;&lt;&nbsp;0&nbsp;or&nbsp;value&nbsp;&gt;&nbsp;100:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('score&nbsp;must&nbsp;between&nbsp;0&nbsp;~&nbsp;100!')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._score&nbsp;=&nbsp;value</pre><pre id="leanote_ace_1489480301484_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student()
+&gt;&gt;&gt;&nbsp;s.score&nbsp;=&nbsp;60&nbsp;#&nbsp;OK，实际转化为s.set_score(60)
+&gt;&gt;&gt;&nbsp;s.score&nbsp;#&nbsp;OK，实际转化为s.get_score()
+60
+&gt;&gt;&gt;&nbsp;s.score&nbsp;=&nbsp;9999
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;...
+ValueError:&nbsp;score&nbsp;must&nbsp;between&nbsp;0&nbsp;~&nbsp;100!&nbsp;</pre><p>&nbsp;当我们只定义getter()不定义setter()时，就是一个只读属性。下面的例子就是 age就是一个制度变量。<br></p><pre id="leanote_ace_1489480442910_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 273px;">class&nbsp;Student(object):
+
+&nbsp;&nbsp;&nbsp;&nbsp;@property
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;birth(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self._birth
+
+&nbsp;&nbsp;&nbsp;&nbsp;@birth.setter
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;birth(self,&nbsp;value):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._birth&nbsp;=&nbsp;value
+
+&nbsp;&nbsp;&nbsp;&nbsp;@property
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;age(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;2015&nbsp;-&nbsp;self._birth&nbsp;</pre><p>&nbsp;<br></p><p>&nbsp;46.多重继承<br></p><p>在我们使用各种类的继承的时候，我们用动物为例，在界门纲目科属种等很多层级后，我们用多重继承来快速的生成要的类型</p><pre id="leanote_ace_1489482774340_0" class="brush:python ace-tomorrow" draggable="false" data-mce-style="line-height: 1.5; font-size: 14px; height: 399px;">class&nbsp;Animal(object):&nbsp;&nbsp;&nbsp;&nbsp;#1&nbsp;高级
+&nbsp;&nbsp;&nbsp;&nbsp;pass
+
+#&nbsp;大类:
+class&nbsp;Mammal(Animal):#哺乳类&nbsp;&nbsp;&nbsp;2中级
+&nbsp;&nbsp;&nbsp;&nbsp;pass
+
+class&nbsp;Bird(Animal):#鸟类&nbsp;&nbsp;&nbsp;2中级
+&nbsp;&nbsp;&nbsp;&nbsp;pass
+
+class&nbsp;Dog(Mammal):#声明是哺乳类的狗&nbsp;&nbsp;3&nbsp;低级
+&nbsp;&nbsp;&nbsp;&nbsp;pass
+
+class&nbsp;Runnable(object）:&nbsp;&nbsp;#&nbsp;是可以跑的动物类&nbsp;&nbsp;2中级
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;run(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Running...')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+class&nbsp;Dog(Mammal,&nbsp;Runnablev):&nbsp;&nbsp;#&nbsp;这样我们就完善了dog是一个可以跑的哺乳动物。
+&nbsp;&nbsp;&nbsp;&nbsp;pass</pre><p>&nbsp;Mixln是一个命名方式，目的是给类增加多个功能。这样设计的时候我们类就考虑主要的线性集成，用Mixln组合多个功能。Python自己有很多库使用Mixln，例如TCPServer和UDPServer这两类网络服务。我们要为多个用户服务的时候，就需要一个多线程来提供。这样就可以获得一个多线程的TCP服务。<br></p><pre id="leanote_ace_1489484557098_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">class&nbsp;MyTCPServer(TCPServer,&nbsp;ForkingMixIn):
+&nbsp;&nbsp;&nbsp;&nbsp;pass&nbsp;</pre><p>&nbsp;<br></p><p>&nbsp;47.定制类<br></p><p>&nbsp;__str__ 在使用一个类的时候，我们会遇到返回的是一个地址，如果可以返回我们想要的结果就好了。</p><pre id="leanote_ace_1489976236163_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">&gt;&gt;&gt;&nbsp;class&nbsp;Student(object):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name
+...
+&gt;&gt;&gt;&nbsp;print(Student('Michael'))
+&lt;__main__.Student&nbsp;object&nbsp;at&nbsp;0x109afb190&gt;</pre><p>我们通过定制函数__str__来实现。</p><pre id="leanote_ace_1489976263690_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 168px;">&gt;&gt;&gt;&nbsp;class&nbsp;Student(object):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__str__(self):
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'Student&nbsp;object&nbsp;(name:&nbsp;%s)'&nbsp;%&nbsp;self.name
+...
+&gt;&gt;&gt;&nbsp;print(Student('Michael'))
+Student&nbsp;object&nbsp;(name:&nbsp;Michael)</pre><p>&nbsp;但是我们直接调用变量的时候还是变量的内存名。是因为直接调用用的不是__str__而是__repr__，两者的区别是__str__是给用户使用的 ，__repr__是给开发者使用的。我们同样可以定义。但如果相同的话，我们可以直接覆盖函数就可以了。<br></p><pre id="leanote_ace_1489977993945_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__str__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'Student&nbsp;object&nbsp;(name=%s)'&nbsp;%&nbsp;self.name
+&nbsp;&nbsp;&nbsp;&nbsp;__repr__&nbsp;=&nbsp;__str__</pre><p>&nbsp;__iter__当我们创建一个类，想要他可以被for...in循环的时候，我们要实现一个__iter__方法，然后for循环会不断的调用迭代对象的__next__()方法，直到遇到StopIteration错误的时候退出循环。<br></p><pre id="leanote_ace_1489979873428_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 252px;">class&nbsp;Fib(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.a,&nbsp;self.b&nbsp;=&nbsp;0,&nbsp;1&nbsp;#&nbsp;初始化两个计数器a，b
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__iter__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self&nbsp;#&nbsp;实例本身就是迭代对象，故返回自己
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__next__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.a,&nbsp;self.b&nbsp;=&nbsp;self.b,&nbsp;self.a&nbsp;+&nbsp;self.b&nbsp;#&nbsp;计算下一个值
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.a&nbsp;&gt;&nbsp;100:&nbsp;#&nbsp;退出循环的条件
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;StopIteration()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.a&nbsp;#&nbsp;返回下一个值</pre><pre id="leanote_ace_1489998402454_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">class&nbsp;Fib(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__getitem__(self,&nbsp;n):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;1,&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;in&nbsp;range(n):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;b,&nbsp;a&nbsp;+&nbsp;b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a</pre><p>&nbsp;__getitem__我们在实现了for循环后，但是不能使用下标来取数，这时候我们用__getitem__()来实现.</p><pre id="leanote_ace_1490057380758_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">class&nbsp;Fib(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__getitem__(self,&nbsp;n):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;1,&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;in&nbsp;range(n):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;b,&nbsp;a&nbsp;+&nbsp;b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a&nbsp;</pre><p>&nbsp;同样，list还有一个切片功能，这时候我们去使用的时候构造的Fib类的时候却是报错的。因为__getitem__传入的是一个int而切片是一个slice所以我们要对__getitem__增加判断升级。</p><pre id="leanote_ace_1490057666655_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 399px;">class&nbsp;Fib(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__getitem__(self,&nbsp;n):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(n,&nbsp;int):&nbsp;#&nbsp;n是索引
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;1,&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;in&nbsp;range(n):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;b,&nbsp;a&nbsp;+&nbsp;b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(n,&nbsp;slice):&nbsp;#&nbsp;n是切片
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;=&nbsp;n.start
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop&nbsp;=&nbsp;n.stop
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;start&nbsp;is&nbsp;None:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;=&nbsp;0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;1,&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;=&nbsp;[]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;in&nbsp;range(stop):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;x&nbsp;&gt;=&nbsp;start:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L.append(a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,&nbsp;b&nbsp;=&nbsp;b,&nbsp;a&nbsp;+&nbsp;b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;L</pre><p>&nbsp;此时，我们还没有完成切片中的step功能，所以要晚上一个__getitem__需要很多的工作。如果我们将对象看成一个dict,__getitem__函数的参数可能是一个可以作为KEY的object，例如str。与此对应的还有设定和赋予值的__setitem__和删除值的__delitem__。</p><p>__getattr__</p><p>我们在调用类内没有的属性的时候，一般会直接报错，为了避免这个错误，我们出了可以加上一个属性，也可以使用__getattr__()来动态返回一个属性或者是一个函数。</p><pre id="leanote_ace_1490318429389_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 252px;">class&nbsp;Student(object):
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;'Michael'
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__getattr__(self,&nbsp;attr):&nbsp;#动态返回变量
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;attr=='score':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;99
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__getattr__(self,&nbsp;attr):&nbsp;#动态返回函数
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;attr=='age':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;lambda:&nbsp;25</pre><pre id="leanote_ace_1490318752334_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student()
+&gt;&gt;&gt;&nbsp;s.name
+'Michael'
+&gt;&gt;&gt;&nbsp;s.score
+99&nbsp;
+&gt;&gt;&gt;&nbsp;s.age()
+25</pre><p>&nbsp;在实际的使用过程中，只有没有的属性，我们才去__getattr__中去寻找，但是做处理，我们在随意调用其他的属性是，返回的都是NONE，所有我们要按照约定，将__getattr__中找不到的返回原来的错误信息。<br></p><pre id="leanote_ace_1490320111879_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">&gt;&gt;&gt;s.abc
+None</pre><pre id="leanote_ace_1490320137631_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">class&nbsp;Student(object):
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__getattr__(self,&nbsp;attr):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;attr=='age':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;lambda:&nbsp;25
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;AttributeError('\'Student\'&nbsp;object&nbsp;has&nbsp;no&nbsp;attribute&nbsp;\'%s\''&nbsp;%&nbsp;attr)&nbsp;</pre><p>如此，我们可以实现把所有的属性和方法调用全部动态化。这有什么用呢？我们可以用这个方法来解决调用各类API接口。写SDK的时候面临只要有改动，就要去修改一次。使用__getattr__我们可以做一个链式的动态调用。</p><pre id="leanote_ace_1490321348321_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 294px;">class&nbsp;Chain(object):
+	"""docstring&nbsp;for&nbsp;Chain"""
+	def&nbsp;__init__(self,&nbsp;path=''):
+		self._path&nbsp;=&nbsp;path
+
+	def&nbsp;__getattr__(self,path):
+		return&nbsp;Chain('%s/%s'&nbsp;%&nbsp;(self._path,path))
+
+	def&nbsp;__str__(self):
+		return&nbsp;self._path
+
+	__repr__&nbsp;=&nbsp;__str__
+
+print(Chain().status.html.homepage.list)</pre><p>&nbsp; 还有一些是包含参数的动态调用，例如在路径中要添加用户名。像GitHub的我们要把:user变量替换实际用户名</p><pre id="leanote_ace_1490321498170_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">GET&nbsp;/users/:user/repos</pre><p>&nbsp;__call__<br></p><p>实例是可以拥有自己的属性和方法的，我们使用的方式是instance.method()来调用的，我们可以用__call__来实现直接在实例本身上调用。</p><pre id="leanote_ace_1490323002799_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 210px;">class&nbsp;Student(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;name):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name&nbsp;=&nbsp;name
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__call__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('My&nbsp;name&nbsp;is&nbsp;%s.'&nbsp;%&nbsp;self.name)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Student('Michael')
+&gt;&gt;&gt;&nbsp;s()&nbsp;#&nbsp;self参数不要传入
+My&nbsp;name&nbsp;is&nbsp;Michael.</pre><p>&nbsp;__call__()还可以定义参数的，对实例直接调用就好像是对函数直接调用，这样我们就模糊了对象和函数的界限，所以我们使用callable()来判定这个对象是否可以被调用。<br></p><pre id="leanote_ace_1490323432986_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;callable(Student())
+True
+&gt;&gt;&gt;&nbsp;callable([1,&nbsp;2,&nbsp;3])
+False</pre><p>&nbsp;<br></p><p>&nbsp;48.枚举类<br></p><p>&nbsp;我们需要定义常量的时候，一个一个写很简单，但是声明的时候仍然是一个变量。Python中有和好的方法。定义个一枚举类型，每个常量都是class的唯一实例。在这里我们用Enum来实现<br></p><pre id="leanote_ace_1490324263004_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">from&nbsp;enum&nbsp;import&nbsp;Enum
+
+Month&nbsp;=&nbsp;Enum('Month',&nbsp;('Jan',&nbsp;'Feb',&nbsp;'Mar',&nbsp;'Apr',&nbsp;'May',&nbsp;'Jun',&nbsp;'Jul',&nbsp;'Aug',&nbsp;'Sep',&nbsp;'Oct',&nbsp;'Nov',&nbsp;'Dec'))</pre><p>&nbsp;这样我们就获得了Month类型的枚举，可以直接调用Month.Jan来调用一个常量或者枚举他的所有成员<br></p><pre id="leanote_ace_1490324344299_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">for&nbsp;name,&nbsp;member&nbsp;in&nbsp;Month.__members__.items():
+&nbsp;&nbsp;&nbsp;&nbsp;print(name,&nbsp;'=&gt;',&nbsp;member,&nbsp;',',&nbsp;member.value)&nbsp;</pre><p>&nbsp;结果是如下,member.value是自动赋予的常量，默认从1开始。<br></p><pre id="leanote_ace_1490324369018_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 252px;">Jan&nbsp;=&gt;&nbsp;Month.Jan&nbsp;,&nbsp;1
+Feb&nbsp;=&gt;&nbsp;Month.Feb&nbsp;,&nbsp;2
+Mar&nbsp;=&gt;&nbsp;Month.Mar&nbsp;,&nbsp;3
+Apr&nbsp;=&gt;&nbsp;Month.Apr&nbsp;,&nbsp;4
+May&nbsp;=&gt;&nbsp;Month.May&nbsp;,&nbsp;5
+Jun&nbsp;=&gt;&nbsp;Month.Jun&nbsp;,&nbsp;6
+Jul&nbsp;=&gt;&nbsp;Month.Jul&nbsp;,&nbsp;7
+Aug&nbsp;=&gt;&nbsp;Month.Aug&nbsp;,&nbsp;8
+Sep&nbsp;=&gt;&nbsp;Month.Sep&nbsp;,&nbsp;9
+Oct&nbsp;=&gt;&nbsp;Month.Oct&nbsp;,&nbsp;10
+Nov&nbsp;=&gt;&nbsp;Month.Nov&nbsp;,&nbsp;11
+Dec&nbsp;=&gt;&nbsp;Month.Dec&nbsp;,&nbsp;12</pre><p>如果我们要自己更精确的控制，我们要从Enum上派生出自定义类</p><pre id="leanote_ace_1490324457229_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 378px;">from&nbsp;enum&nbsp;import&nbsp;Enum,&nbsp;unique
+
+@unique
+class&nbsp;Weekday(Enum):
+&nbsp;&nbsp;&nbsp;&nbsp;Sun&nbsp;=&nbsp;0&nbsp;#&nbsp;Sun的value被设定为0
+&nbsp;&nbsp;&nbsp;&nbsp;Mon&nbsp;=&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;Tue&nbsp;=&nbsp;2
+&nbsp;&nbsp;&nbsp;&nbsp;Wed&nbsp;=&nbsp;3
+&nbsp;&nbsp;&nbsp;&nbsp;Thu&nbsp;=&nbsp;4
+&nbsp;&nbsp;&nbsp;&nbsp;Fri&nbsp;=&nbsp;5
+&nbsp;&nbsp;&nbsp;&nbsp;Sat&nbsp;=&nbsp;6&nbsp;
+
+print(Weekday.Tue)
+print(Weekday.Sat.value)
+print(Weekday(1))
+
+for&nbsp;name,user&nbsp;in&nbsp;Weekday.__members__.items():
+	print(name,'-&gt;',user)&nbsp;</pre><pre id="leanote_ace_1490324845468_0" class="brush:python ace-tomorrow" draggable="false" data-mce-style="line-height: 1.5; font-size: 14px; height: 210px;">Weekday.Tue
+6
+Weekday.mon
+sun&nbsp;-&gt;&nbsp;Weekday.sun
+mon&nbsp;-&gt;&nbsp;Weekday.mon
+Tue&nbsp;-&gt;&nbsp;Weekday.Tue
+Wed&nbsp;-&gt;&nbsp;Weekday.Wed
+Thu&nbsp;-&gt;&nbsp;Weekday.Thu
+Fri&nbsp;-&gt;&nbsp;Weekday.Fri
+Sat&nbsp;-&gt;&nbsp;Weekday.Sat</pre><p>&nbsp;<br></p><p>&nbsp;<br></p><p>49.元类<br></p><p>type()</p><p>type()是一个类型或者变量的类型，Hello是一个class，它的类型就是type，而h是一个实例，它的类型是Hello。</p><pre id="leanote_ace_1490333669645_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 252px;">class&nbsp;Hello(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;hello(self,&nbsp;name='world'):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello,&nbsp;%s.'&nbsp;%&nbsp;name)&nbsp;
+
+&gt;&gt;&gt;&nbsp;from&nbsp;hello&nbsp;import&nbsp;Hello
+&gt;&gt;&gt;&nbsp;h&nbsp;=&nbsp;Hello()
+&gt;&gt;&gt;&nbsp;h.hello()
+Hello,&nbsp;world.
+&gt;&gt;&gt;&nbsp;print(type(Hello))
+&lt;class&nbsp;'type'&gt;
+&gt;&gt;&gt;&nbsp;print(type(h))
+&lt;class&nbsp;'hello.Hello'&gt;</pre><p>&nbsp;class的定义是可以动态创建的，而实现动态创建的方法就是所以type()函数。type()即可以返回一个对象的类型，也可以创建出新的类型。用下面的方式可以直接动态生成Hello类型。</p><pre id="leanote_ace_1490333840838_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;def&nbsp;fn(self,&nbsp;name='world'):&nbsp;#&nbsp;先定义函数
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello,&nbsp;%s.'&nbsp;%&nbsp;name)
+...
+&gt;&gt;&gt;&nbsp;Hello&nbsp;=&nbsp;type('Hello',&nbsp;(object,),&nbsp;dict(hello=fn))&nbsp;#&nbsp;创建Hello&nbsp;class</pre><p>&nbsp;创建一个新的类型，我们一要传入三个参数。<br></p><p>1)class的名称 &nbsp;对应&nbsp;'Hello'</p><p>2)集成的父类集合，因为Python支持多重继承，如果只有一个父类，集成组的是元组，要是用tuple的单元素写法。对应&nbsp;'(object,)'</p><p>3)class的方法名和函数绑定。这里我们把函数fn绑定在Hello上。对应&nbsp;'dict(hello=fn)'</p><p>&nbsp;metaclass<br></p><p>metaclass，直译为元类,我们可以使用metaclass来创建class,然后在实例化使用。</p><p>正常情况我们都是定义class ,创建实例。而元类是定义metaclass,然后创建类，然后创建实例。我们在定义metaclass的时候，都用metaclass作为尾坠来表明。</p><pre id="leanote_ace_1490334263332_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">class&nbsp;ListMetaclass(type):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__new__(cls,&nbsp;name,&nbsp;bases,&nbsp;attrs):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attrs['add']&nbsp;=&nbsp;lambda&nbsp;self,&nbsp;value:&nbsp;self.append(value)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;type.__new__(cls,&nbsp;name,&nbsp;bases,&nbsp;attrs)</pre><pre id="leanote_ace_1490334271084_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">class&nbsp;MyList(list,&nbsp;metaclass=ListMetaclass):
+&nbsp;&nbsp;&nbsp;&nbsp;pass&nbsp;</pre><p>&nbsp;我们在metaclass传入关键字的时候，解释器通过ListMetaclass.__new__()创建了list。其传入参数的要求是：<br></p><p>1)创建类的对象</p><p>2)&nbsp;类的名字</p><p>3)类集成的父类集合</p><p>4)类的方法集合</p><p>&nbsp;</p><h2>Test and Catch<br></h2><p>&nbsp;50.错误处理<br></p><p>我们有时候会定义一些特殊的返回值来表示错误，但是在实际过程中，我们会和其他的返回值结果混淆。所以在JAVA中我们有一套try...except...finally...的方式。python同样也有。</p><p>try。try是在我们认为该段落会出错的时候，我们用try执行，若出错我们就进入except块，执行完毕后如果有finally块，就执行。至此一个流程完毕。</p><pre id="leanote_ace_1490753611704_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 189px;">try:
+&nbsp;&nbsp;&nbsp;&nbsp;print('try...')
+&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;10&nbsp;/&nbsp;0
+&nbsp;&nbsp;&nbsp;&nbsp;print('result:',&nbsp;r)
+except&nbsp;ZeroDivisionError&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;print('except:',&nbsp;e)
+finally:
+&nbsp;&nbsp;&nbsp;&nbsp;print('finally...')
+print('END')</pre><p>&nbsp;这个代码会在10/0产生一个错误，所以后续语句没有被执行，expect捕捉到了ZeroDivisionError错误后被执行了，然后执行了finally。最后程序按照接下来的流程走动。如果我们把0换成2<br></p><pre id="leanote_ace_1490758131143_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">try...
+result:&nbsp;5
+finally...
+END</pre><p>错误是没有发生的，所以ecpect没有被执行，试试finally如果有就一定会执行。当错误有很多种的时候我们就可以多个ecpect处理不同的错误。如果没有错误发生，我们可以在except后面加入一个else，没有错误的时候会自动执行，有else的时候finally也会被执行。</p><pre id="leanote_ace_1490758412830_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 273px;">try:
+&nbsp;&nbsp;&nbsp;&nbsp;print('try...')
+&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;10&nbsp;/&nbsp;int('2')
+&nbsp;&nbsp;&nbsp;&nbsp;print('result:',&nbsp;r)
+except&nbsp;ValueError&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;print('ValueError:',&nbsp;e)
+except&nbsp;ZeroDivisionError&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;print('ZeroDivisionError:',&nbsp;e)
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;print('no&nbsp;error!')
+finally:
+&nbsp;&nbsp;&nbsp;&nbsp;print('finally...')
+print('END')</pre><p>Python的所有错误都是从类BaseException类中派生出来的。我们使用的时候，except在捕捉父类后，其子类也被捕捉。在except中写含有父子关系的错误类，子类是永远捕捉不到的。例如:UnicodeError就是ValueError的子类就不会被捕捉。</p><pre id="leanote_ace_1490836809824_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">try:
+&nbsp;&nbsp;&nbsp;&nbsp;foo()
+except&nbsp;ValueError&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;print('ValueError')
+except&nbsp;UnicodeError&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;print('UnicodeError')</pre><p><a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" data-mce-href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy">https://docs.python.org/3/library/exceptions.html#exception-hierarchy</a>是Pyhton的错误类集成关系文档。</p><p>Python在使try...except...的时候，是可以多层调用的，如下面的例子：我们在main()中定义了try...except..嵌套调用了bar()和foo()，但是如果在foo()中出错了，只要main()捕捉到了我们就可以处理。</p><pre id="leanote_ace_1490837383126_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 273px;">def&nbsp;foo(s):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;10&nbsp;/&nbsp;int(s)
+
+def&nbsp;bar(s):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;foo(s)&nbsp;*&nbsp;2
+
+def&nbsp;main():
+&nbsp;&nbsp;&nbsp;&nbsp;try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar('0')
+&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Error:',&nbsp;e)
+&nbsp;&nbsp;&nbsp;&nbsp;finally:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('finally...')&nbsp;</pre><p>调用堆栈</p><p>如果错误没有被捕捉，它就是会一直往上抛，最后被Python解释器捕捉，打印一个错误信息，然后程序退出。<br></p><pre id="leanote_ace_1490839167151_0" class="brush:python ace-tomorrow" draggable="false" data-mce-style="line-height: 1.5; font-size: 14px; height: 231px;">{content}nbsp;python3&nbsp;err.py
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"err.py",&nbsp;line&nbsp;11,&nbsp;in&nbsp;&lt;module&gt;&nbsp;#main出错，在11行，原因在9行
+&nbsp;&nbsp;&nbsp;&nbsp;main()
+&nbsp;&nbsp;File&nbsp;"err.py",&nbsp;line&nbsp;9,&nbsp;in&nbsp;main&nbsp;#bar('0')出错，在9行，原因在6行
+&nbsp;&nbsp;&nbsp;&nbsp;bar('0')
+&nbsp;&nbsp;File&nbsp;"err.py",&nbsp;line&nbsp;6,&nbsp;in&nbsp;bar&nbsp;#foo(s)出错，在6行，原因在3行
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;foo(s)&nbsp;*&nbsp;2
+&nbsp;&nbsp;File&nbsp;"err.py",&nbsp;line&nbsp;3,&nbsp;in&nbsp;foo&nbsp;&nbsp;#foo(s)中return&nbsp;10&nbsp;/&nbsp;int(s)出错，原因打印
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;10&nbsp;/&nbsp;int(s)
+ZeroDivisionError:&nbsp;division&nbsp;by&nbsp;zero</pre><p>记录错误</p><p>不捕捉错误，解释器虽然会答应出来，但是程序也被结束了。我们希望可以打印错误，同时也希望继续执行。我们使用内置的logging模块来实现。经过配置，我们还可以把错误写进日志，来解读。</p><pre id="leanote_ace_1490839631349_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 378px;">#&nbsp;err_logging.py
+
+import&nbsp;logging
+
+def&nbsp;foo(s):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;10&nbsp;/&nbsp;int(s)
+
+def&nbsp;bar(s):
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;foo(s)&nbsp;*&nbsp;2
+
+def&nbsp;main():
+&nbsp;&nbsp;&nbsp;&nbsp;try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar('0')
+&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logging.exception(e)&nbsp;#在这里我们可以打印出错误，同时程序也被执行下去。
+
+main()
+print('END')&nbsp;</pre><p>抛出错误</p><p>Python自己是有很多的错误类型来抛出，我们自己写的函数也可以抛出。首先我们要定义有一个错误类，选择好继承关系，然后用raise语句抛出一个错误实例。</p><pre id="leanote_ace_1490842452702_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 231px;">#&nbsp;err_raise.py
+class&nbsp;FooError(ValueError):
+&nbsp;&nbsp;&nbsp;&nbsp;pass
+
+def&nbsp;foo(s):
+&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;int(s)
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;n==0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;FooError('invalid&nbsp;value:&nbsp;%s'&nbsp;%&nbsp;s)
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;10&nbsp;/&nbsp;n
+
+foo('0')</pre><p>还有另外的一种错误处理方式。</p><pre id="leanote_ace_1490852057293_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 336px;">#&nbsp;err_reraise.py
+
+def&nbsp;foo(s):
+&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;int(s)
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;n==0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('invalid&nbsp;value:&nbsp;%s'&nbsp;%&nbsp;s)
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;10&nbsp;/&nbsp;n
+
+def&nbsp;bar():
+&nbsp;&nbsp;&nbsp;&nbsp;try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo('0')
+&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;ValueError&nbsp;as&nbsp;e:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('ValueError!')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise
+
+bar()</pre><p>我们可以看到，出错输出后，我们不但打印了一个ValueError后，还用raise把语句抛出，看似是措多此一举。实际上，这里我们打印只是为了追踪错误，实际过程中我们可能不知道怎么对这个错误进行处理，从而抛出到上级来处理。所以raise语句如果不带参数，就是把当前错误原样抛出。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></p><p>&nbsp;<br></p><p>51.调试</p><p>断言 assert&nbsp;</p><p>我们在某个测定的地方觉得有问题的时候，用断言写出来。</p><pre id="leanote_ace_1490854290043_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">def&nbsp;foo(s):
+&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;int(s)
+&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;n&nbsp;!=&nbsp;0,&nbsp;'n&nbsp;is&nbsp;zero!'
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;10&nbsp;/&nbsp;n
+
+def&nbsp;main():
+&nbsp;&nbsp;&nbsp;&nbsp;foo('0')</pre><p>assert表示的意思是：当 n!= 0 为真时继续，不为真时输出'n is zero!'。如果断言失败，会抛出AssertionError错误。</p><p>当一段程序中有很多和assert的时候，很麻烦，我们在运行的时候输入</p><pre id="leanote_ace_1490854685441_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">python3&nbsp;-0&nbsp;test.py</pre><p>就可以关闭assert。此处的assert就相当于pass。</p><p>logging</p><p>和assert相比，logging不会抛出错误，而是输出到文件中。</p><pre id="leanote_ace_1490854942926_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">import&nbsp;logging
+logging.basicConfig(level=logging.INFO)#添加后改变logging的配置。
+
+s&nbsp;=&nbsp;'0'
+n&nbsp;=&nbsp;int(s)
+logging.info('n&nbsp;=&nbsp;%d'&nbsp;%&nbsp;n)
+print(10&nbsp;/&nbsp;n)</pre><p>打开文件发现只有一句ZeroDivisionError，没有其他信息。应为logging是可以配置信息级别的。如上在import添加后，可以得到详细的输出。</p><pre id="leanote_ace_1490855048486_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">{content}nbsp;python3&nbsp;err.py
+INFO:root:n&nbsp;=&nbsp;0
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"err.py",&nbsp;line&nbsp;8,&nbsp;in&nbsp;&lt;module&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;print(10&nbsp;/&nbsp;n)
+ZeroDivisionError:&nbsp;division&nbsp;by&nbsp;zero</pre><p>logging的等级有：</p><p>1)debug &nbsp;2)info &nbsp;3)warning &nbsp;4)error</p><p>当我们指定后面的等级时候，前面的就不再生效。可以直接动态的控制信息的输出等级。不用删除。</p><p>调试器 pdb&nbsp;</p><p>让Python来单步运行的方式，查看运行状态。</p><pre id="leanote_ace_1490855559524_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">python&nbsp;-m&nbsp;pdb&nbsp;test.py</pre><p>使用这个语句开启，后面使用命令来执行。</p><pre id="leanote_ace_1490855778114_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">{content}nbsp;python3&nbsp;-m&nbsp;pdb&nbsp;err.py
+&gt;&nbsp;/Users/michael/Github/learn-python3/samples/debug/err.py(2)&lt;module&gt;()
+-&gt;&nbsp;s&nbsp;=&nbsp;'0'</pre><p>使用命令 l 来查看代码；</p><pre id="leanote_ace_1490855785090_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 105px;">(Pdb)&nbsp;l
+&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;err.py
+&nbsp;&nbsp;2&nbsp;&nbsp;-&gt;&nbsp;s&nbsp;=&nbsp;'0'
+&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;int(s)
+&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(10&nbsp;/&nbsp;n)</pre><p>使用命令 n 来单步执行代码；</p><pre id="leanote_ace_1490855834459_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">(Pdb)&nbsp;n
+&gt;&nbsp;/Users/michael/Github/learn-python3/samples/debug/err.py(3)&lt;module&gt;()
+-&gt;&nbsp;n&nbsp;=&nbsp;int(s)</pre><p>使用命令 p 变量名称 来查询现在步骤的各个变量。</p><pre id="leanote_ace_1490855845307_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">(Pdb)&nbsp;p&nbsp;s
+'0'</pre><p>使用命令 q 结束调试。</p><pre id="leanote_ace_1490855851699_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">(Pdb)&nbsp;q&nbsp;</pre><p>pdb.set_trace()</p><p>使用pdb逐步调试在代码有很多行的时候很难执行下去。这个时候我们import pdb后，在可能出错的地方放一个pdb.set_trace()，就可以设置一个断点。</p><pre id="leanote_ace_1490856100947_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 147px;">#&nbsp;err.py
+import&nbsp;pdb
+
+s&nbsp;=&nbsp;'0'
+n&nbsp;=&nbsp;int(s)
+pdb.set_trace()&nbsp;#&nbsp;运行到这里会自动暂停
+print(10&nbsp;/&nbsp;n)</pre><p>遇到pdb/set_trace()，暂停后会进入调试模式，命令 p 变量名 查看变量。&nbsp;命令 c 可以继续执行。</p><pre id="leanote_ace_1490856237040_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 189px;">&gt;&nbsp;/Users/michael/Github/learn-python3/samples/debug/err.py(7)&lt;module&gt;()
+-&gt;&nbsp;print(10&nbsp;/&nbsp;n)
+(Pdb)&nbsp;p&nbsp;n
+0
+(Pdb)&nbsp;c
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):
+&nbsp;&nbsp;File&nbsp;"err.py",&nbsp;line&nbsp;7,&nbsp;in&nbsp;&lt;module&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;print(10&nbsp;/&nbsp;n)
+ZeroDivisionError:&nbsp;division&nbsp;by&nbsp;zero</pre><p>这样效率会比pdb高一些，但是没有高到哪里去。</p><p>总结：工作中可以借用IDE来实现调试。</p><p>&nbsp;<br></p><p>52.文件读写</p><p>一个正常的文件读流程如下：</p><pre id="leanote_ace_1490922876994_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;open('/Users/michael/test.txt',&nbsp;'r')&nbsp;#前面为文件路径，后面为打开方式
+&gt;&gt;&gt;&nbsp;f.read()&nbsp;&nbsp;#调用read()读取文件内容
+'Hello,&nbsp;world!'
+&gt;&gt;&gt;&nbsp;f.close()&nbsp;#&nbsp;关闭文件读取，释放系统资源。</pre><p>文件读写的时候有可能产生IOError，这样close()不会被执行，那么系统资源不能被释放。为了保证每次都能关闭，我们可以使用try...except..来实现。</p><pre id="leanote_ace_1490923407660_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">try:
+&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;=&nbsp;open('/path/to/file',&nbsp;'r')
+&nbsp;&nbsp;&nbsp;&nbsp;print(f.read())
+finally:
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;f:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.close()</pre><p>但是如此使用实在繁琐，所以我们使用with语句来实现。不但更简介，而且不用调用close()方法。</p><pre id="leanote_ace_1490923443062_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">with&nbsp;open('/path/to/file',&nbsp;'r')&nbsp;as&nbsp;f:
+&nbsp;&nbsp;&nbsp;&nbsp;print(f.read())</pre><p>读的模式：</p><p>1)read()是直接读取所有内容的，但是当文件很大的时候，内存就不够了。所以使用read(size)每次读取size个字节内容。</p><p>2)readline()可以每次读取一行内容，调用readlines()是一次读取所有行，并返回一个List.</p><p>总结：read()最方便，read(size)最保险，配置文件最好使用readlines()一次读取完成。</p><pre id="leanote_ace_1490923743361_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">for&nbsp;line&nbsp;in&nbsp;f.readlines():
+&nbsp;&nbsp;&nbsp;&nbsp;print(line.strip())&nbsp;#&nbsp;把末尾的'\n'删掉</pre><p>file-like Object</p><p>像open()函数这样有个read()方法的，都称为file-like Object。除了file外，还有字节流，网络流，自定义流等。StringIO是在内存中创建的file-like Object，常用作临时缓冲。</p><p>二进制文件</p><p>读取图片、视屏、二进制文本等二进制文件的时候：其他相同</p><pre id="leanote_ace_1490939662591_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;open('/Users/michael/test.jpg',&nbsp;'rb')</pre><p>字符编码</p><p>读取非UTF-8文本集的时候要加注读取的的字符集：</p><pre id="leanote_ace_1490939838320_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;open('/Users/michael/gbk.txt',&nbsp;'r',&nbsp;encoding='gbk')&nbsp;</pre><p>字符集如果出错要一个个处理很麻烦，我们可以普遍设置为忽略。</p><pre id="leanote_ace_1490940360331_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;open('/Users/michael/gbk.txt',&nbsp;'r',&nbsp;encoding='gbk',&nbsp;errors='ignore')</pre><p>写文件和读取文件都是使用open()函数的，只是在标志位使用的是w来标记。二进制使用wb。<br></p><pre id="leanote_ace_1490940486219_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;open('/Users/michael/test.txt',&nbsp;'w')&nbsp;#标志位和读文件不同的是是w
+&gt;&gt;&gt;&nbsp;f.write('Hello,&nbsp;world!')
+&gt;&gt;&gt;&nbsp;f.close()</pre><p>我们是可以反复使用write()方法来是多次写入，但是要保证写文件能够正常写入，所以要正确执行close()函数。系统可能在多次写入不是实时存储的，在最后执行close()的时候才正式提交。使用with的方式来做。</p><pre id="leanote_ace_1490940800537_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 42px;">with&nbsp;open('/Users/michael/test.txt',&nbsp;'w')&nbsp;as&nbsp;f:
+&nbsp;&nbsp;&nbsp;&nbsp;f.write('Hello,&nbsp;world!')</pre><p>和read()相同，我们传入encoding参数的时候，可以把写入文件的字符格式转换成特定格式。</p><pre id="leanote_ace_1490940882039_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 21px;">&nbsp;f&nbsp;=&nbsp;open('/Users/michael/gbk.txt',&nbsp;'w',&nbsp;encoding='gbk')</pre><p>多使用with来控制IO是最好的。</p><p>&nbsp;<br></p><p>53. StringIO 和 BytesIO<br></p><p>StringIO</p><p>写StringIO</p><pre id="leanote_ace_1490942532075_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 210px;">&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;StringIO
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;StringIO()
+&gt;&gt;&gt;&nbsp;f.write('hello')&nbsp;&nbsp;#多次写入
+5
+&gt;&gt;&gt;&nbsp;f.write('&nbsp;')
+1
+&gt;&gt;&gt;&nbsp;f.write('world!')
+6
+&gt;&gt;&gt;&nbsp;print(f.getvalue())&nbsp;#getvalue()用于获得写入的后的str
+hello&nbsp;world!</pre><p>读StringIO，和读取文件一样。</p><pre id="leanote_ace_1490942600506_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 231px;">&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;StringIO
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;StringIO('Hello!\nHi!\nGoodbye!')&nbsp;#这里预先始化，可以直接读取内存中的。
+&gt;&gt;&gt;&nbsp;while&nbsp;True:&nbsp;&nbsp;#使用with语法来读取。
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;=&nbsp;f.readline()&nbsp;&nbsp;&nbsp;#行读取模式。
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;s&nbsp;==&nbsp;'':
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(s.strip())&nbsp;#strip()去除\n达到换行
+...
+Hello!
+Hi!
+Goodbye!</pre><p>BytesIO</p><p>写</p><pre id="leanote_ace_1490942788849_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 126px;">&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;BytesIO()
+&gt;&gt;&gt;&nbsp;f.write('中文'.encode('utf-8'))
+6
+&gt;&gt;&gt;&nbsp;print(f.getvalue())
+b'\xe4\xb8\xad\xe6\x96\x87'&nbsp;</pre><p>这里写入的是UTF-8编码的二进制字符。</p><p>读</p><pre id="leanote_ace_1490942836241_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;BytesIO(b'\xe4\xb8\xad\xe6\x96\x87')
+&gt;&gt;&gt;&nbsp;f.read()
+b'\xe4\xb8\xad\xe6\x96\x87'</pre><p>&nbsp;</p><p>54.系统和文件目录</p><p>系统</p><pre id="leanote_ace_1490943169046_0" class="brush:python ace-tomorrow" draggable="false" data-mce-style="line-height: 1.5; font-size: 14px; height: 294px;">&gt;&gt;&gt;&nbsp;import&nbsp;os
+&gt;&gt;&gt;&nbsp;os.name&nbsp;#&nbsp;操作系统类型&nbsp;posix&nbsp;就是linux或者unix、mac&nbsp;nt是windows
+'nt'
+
+&gt;&gt;&gt;&nbsp;os.uname()&nbsp;&nbsp;#win系统上没有此函数
+posix.uname_result(sysname='Darwin',&nbsp;nodename='MichaelMacPro.local',&nbsp;release='14.3.0',&nbsp;version='Darwin&nbsp;Kernel&nbsp;Version&nbsp;14.3.0:&nbsp;Mon&nbsp;Mar&nbsp;23&nbsp;11:59:05&nbsp;PDT&nbsp;2015;&nbsp;root:xnu-2782.20.48~5/RELEASE_X86_64',&nbsp;machine='x86_64')
+
+AttributeError:&nbsp;module&nbsp;'os'&nbsp;has&nbsp;no&nbsp;attribute&nbsp;'uname'#win输入os.uname的结果
+
+&gt;&gt;&gt;&nbsp;os.environ&nbsp;#查询环境变量。
+
+&gt;&gt;&gt;&nbsp;os.environ.get('PATH')&nbsp;#查询环境变量Path</pre><p>&nbsp;文件目录</p><p>操作文件和目录的方法一部分在os一部分在os.path中的。</p><p>在目录中的一些常用操作：</p><pre id="leanote_ace_1490943553637_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 336px;">#查看当前目录的绝对路径:
+&gt;&gt;&gt;&nbsp;os.path.abspath('.')
+'/Users/michael'
+#在某个目录下创建一个新目录，首先把新目录的完整路径表示出来:
+&gt;&gt;&gt;&nbsp;os.path.join('/Users/michael',&nbsp;'testdir')
+'/Users/michael/testdir'
+#然后创建一个目录:
+&gt;&gt;&gt;&nbsp;os.mkdir('/Users/michael/testdir')
+#删掉一个目录:
+&gt;&gt;&gt;&nbsp;os.rmdir('/Users/michael/testdir')
+#拆分一个路径
+&gt;&gt;&gt;&nbsp;os.path.split('/Users/michael/testdir/file.txt')
+('/Users/michael/testdir',&nbsp;'file.txt')
+#用拆分得到一个尾缀名。
+&gt;&gt;&gt;&nbsp;os.path.splitext('/path/to/file.txt')
+('/path/to/file',&nbsp;'.txt')
+#重命名文件
+&gt;&gt;&gt;&nbsp;os.rename('test.txt',&nbsp;'test.py')
+#删掉文件:
+&gt;&gt;&gt;&nbsp;os.remove('test.py')</pre><p>我们在文件路径中不要自己去拼接，我们要使用os.path.join()这样在不同系统能返回正确的文件目录格式。拆分的时候就用os.path.splitext()</p><p>os模块中本身是没有文件复制的，但在shutil模块中补充filecopy()。</p><p>过滤文件</p><p>列出当前目录下的所有目录：</p><pre id="leanote_ace_1490945785455_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 63px;">&gt;&gt;&gt;&nbsp;[x&nbsp;for&nbsp;x&nbsp;in&nbsp;os.listdir('.')&nbsp;if&nbsp;os.path.isdir(x)]
+['.lein',&nbsp;'.local',&nbsp;'.m2',&nbsp;'.npm',&nbsp;'.ssh',&nbsp;'.Trash',&nbsp;'.vim',&nbsp;'Applications',&nbsp;'Desktop',&nbsp;...]</pre><p>列出当前目录下的所有py文件：</p><pre id="leanote_ace_1490945791109_0" class="brush:python ace-tomorrow" data-mce-style="line-height: 1.5; font-size: 14px; height: 84px;">&gt;&gt;&gt;&nbsp;[x&nbsp;for&nbsp;x&nbsp;in&nbsp;os.listdir('.')&nbsp;if&nbsp;os.path.isfile(x)&nbsp;and&nbsp;os.path.splitext(x)[1]=='.py']
+['apis.py',&nbsp;'config.py',&nbsp;'models.py',&nbsp;'pymonitor.py',&nbsp;'test_db.py',&nbsp;'urls.py',&nbsp;'wsgiapp.py']-</pre><p><br></p><p>&nbsp;<br></p><p><br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p></div>
+	</div>
+
+<!-- 该js供其它处理 -->
+<script src="../leanote-html.js"></script>
+</body>
+</html>
