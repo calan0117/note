@@ -23,8 +23,3 @@ pulint --rcfile = pylint.conf
 
 解决不能扩展白名单问题：   
 配置文件中设置：unsafe-load-any-extension = yes
-
-屏蔽一些不需要的警告：  
-1. E1101：对第三方模块引用的报错。
-2. R0903：
-3. W0621：
