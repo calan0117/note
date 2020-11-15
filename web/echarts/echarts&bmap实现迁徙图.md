@@ -6,18 +6,18 @@ echarts.js原先可以不使用百度地图API，直接实现迁徙图的效果�
 
 -----
 
-首先需要[echarts](http://echarts.baidu.com/download.html)。   
-然后是echarts的插件 [bmap](https://github.com/apache/incubator-echarts/tree/master/extension/bmap)。   
+首先需要[echarts](http://echarts.baidu.com/download.html)。 
+然后是echarts的插件 [bmap](https://github.com/apache/incubator-echarts/tree/master/extension/bmap)。 
 之后是需要在页面上结合百度地图，所以要申请一个百度地图的api key[地图Api申请地址](http://lbsyun.baidu.com/index.php?title=jspopular)
 >这里申请一个JS API在网页端 使用就可以了
 
 准备就绪，就可以开始制作了。
 
-* 百度echarts本身的简单使用教程    
-    [echarts最简单教程](http://echarts.baidu.com/tutorial.html#5%20%E5%88%86%E9%92%9F%E4%B8%8A%E6%89%8B%20ECharts)    
+* 百度echarts本身的简单使用教程 
+    [echarts最简单教程](http://echarts.baidu.com/tutorial.html#5%20%E5%88%86%E9%92%9F%E4%B8%8A%E6%89%8B%20ECharts) 
     这是echarts给出的快速上手教程，关于配置文件中的每个模块的作用在后面简单介绍。文档中也有更详细的介绍和使用方法。
 
-* 搭一个简易的测试页面    
+* 搭一个简易的测试页面 
     1. 文件结构
     ```   
         demo/    
