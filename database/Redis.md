@@ -83,6 +83,8 @@ redis 127.0.0.1:6379> GET demostring
 "gu6s"
 ```
 
+
+
 ### Hash: 散列
 
 Redis hash 是一个键值(key=>value)对集合。

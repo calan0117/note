@@ -7,6 +7,20 @@ sudo service mysql status
 sudo service mysql stop
 # 启动mysql
 sudo service mysql start
+
+# 创建新用户
+create user 'username'@'allowedhost' identified by 'password'; # 全部IP则为 %
+
+# 创建数据库
+create database basename;
+
+# 授权
+# all 可以替换为 select,delete,update,create,drop
+grant all privileges on 'dbname'.* to 'username'@'allowedhost'  # dbname下所有表
+
+
+# 刷新权限
+flush privileges;
 ```
 
 
@@ -44,15 +58,17 @@ Ubuntu Server APT install
 6. 使ROOT用户可以远程登录
 
    ```sql
+   mysql -u root -p //ssh连接数据库
+   
    use mysql // 切换到mysql数据库的库
    
    select user,host from user; //查询当前用户
    
    update user set host = '%' where user =  'root'; // 修改root用户，允许远程登录。
    
-   FLUSH PRIVILEGES; // 刷新权限
+FLUSH PRIVILEGES; // 刷新权限
    ```
-
+   
    
 
 ## 笔记
