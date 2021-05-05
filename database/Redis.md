@@ -1,5 +1,3 @@
-# Redis 杂记
-
 ## 常用文档
 
 [文档首页](https://redis.io/documentation)

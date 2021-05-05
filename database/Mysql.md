@@ -1,4 +1,4 @@
-## 常用命令
+### 常用命令
 
 ```shell
 # 检测状态
@@ -27,7 +27,7 @@ flush privileges;
 
 
 
-## 安装
+### 安装
 
 Ubuntu Server APT install
 
@@ -66,6 +66,7 @@ Ubuntu Server APT install
    
    update user set host = '%' where user =  'root'; // 修改root用户，允许远程登录。
    
+
 FLUSH PRIVILEGES; // 刷新权限
    ```
    
@@ -118,11 +119,11 @@ InnoDB适合：
 
 ### session页面中可以使用命令来手动事务。
 
-```sql
+​```sql
 start transaction
 commit
 rollback 
-```
+   ```
 
 
 
