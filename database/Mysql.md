@@ -66,8 +66,8 @@ Ubuntu Server APT install
    
    update user set host = '%' where user =  'root'; // 修改root用户，允许远程登录。
    
-
-FLUSH PRIVILEGES; // 刷新权限
+   
+   FLUSH PRIVILEGES; // 刷新权限
    ```
    
    
@@ -118,22 +118,19 @@ InnoDB适合：
 
 
 ### session页面中可以使用命令来手动事务。
-
-​```sql
+```sql
 start transaction
 commit
 rollback 
-   ```
-
-
+```
 
 
 
 ### 慢SQL查询
 
+```sql
 在CMD中查询和开启相关设置，也可以在MYSQL配置文件中设置来开启。
 
-```sql
 show variables like '%query%';
 show status like '%slow-queries%';
 slow_query_log /* 默认是OFF */
@@ -141,8 +138,6 @@ set global show_query_log = ON /* 打开慢查询日志开关 */
 slow_query_log_file
 long_query_time  /* 慢查询的时间阈值 */
 ```
-
-
 
 
 
